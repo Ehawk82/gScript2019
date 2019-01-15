@@ -8,4 +8,4 @@ function takeFull(x) { var y,z; return y = x.className.split('_full'), z = y[0],
 function createEle(x) { return document.createElement(x) };
 function byTag(x, y) { if (!y || y === null) {y = 0}  return docuSment.getElementsByTagName(x)[y] };
 
-module.exports = { bySel: bySel, byId: byId, byClass: byClass, bySelAll: bySelAll, deleteThis: deleteThis, makeFull: makeFull, takeFull: takeFull };
+module.exports = { bySel: bySel, byId: byId, byClass: byClass, bySelAll: bySelAll, deleteThis: deleteThis, makeFull: makeFull, takeFull: takeFull, createEle: createEle, byTag: byTag };
