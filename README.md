@@ -19,19 +19,19 @@ ____
 ____
 <h2>2: Function Names<h2>
 
-<div>bySel: get elements by query selector<h6>[object].bySel(x);</h6></div>
-<div>byId: get elements by id<h6>[object].byId(x);</h6></div>
-<div>byClass: get elements by class name<h6>[object].byClass(x);</h6></div>
-<div>bySelAll: get all elements by query selector<h6>[object].bySelAll(x);</h6></div>
-<div>deleteThis: delete the element<h6>[object].deleteThis(x);</h6></div>
-<div>makeFull: add "_full" to class name<h6>[object].makeFull(x);</h6></div>
-<div>takeFull: remove "_full" from class name<h6>[object].takeFull(x);</h6></div>
-<div>createEle: create a mew element<h6>[object].createEle(x);</h6></div>
-<div>byTag: get elements by tag name<h6>[object].byTag(x,y);</h6></div>
-<div>saveLS: save and stringify the local storage item<h6>[object].saveLS(x,y);</h6></div>
-<div>loadLS: load a local storage item<h6>[object].loadLS(x);</h6></div>
-<div>clearLS: clear the local storage<h6>[object].clearLS(x);</h6></div>
-<div>removeLSitem: remove a specific item from local storage<h6>[object].removeLSitem(x);</h6></div>
+<div>bySel: get elements by query selector<samp>[object].bySel(x);</samp></div>
+<div>byId: get elements by id<samp>[object].byId(x);</samp></div>
+<div>byClass: get elements by class name<samp>[object].byClass(x);</samp></div>
+<div>bySelAll: get all elements by query selector<samp>[object].bySelAll(x);</samp></div>
+<div>deleteThis: delete the element<samp>[object].deleteThis(x);</samp></div>
+<div>makeFull: add "_full" to class name<samp>[object].makeFull(x);</samp></div>
+<div>takeFull: remove "_full" from class name<samp>[object].takeFull(x);</samp></div>
+<div>createEle: create a mew element<samp>[object].createEle(x);</samp></div>
+<div>byTag: get elements by tag name<samp>[object].byTag(x,y);</samp></div>
+<div>saveLS: save and stringify the local storage item<samp>[object].saveLS(x,y);</samp></div>
+<div>loadLS: load a local storage item<samp>[object].loadLS(x);</samp></div>
+<div>clearLS: clear the local storage<samp>[object].clearLS(x);</samp></div>
+<div>removeLSitem: remove a specific item from local storage<samp>[object].removeLSitem(x);</samp></div>
 
 ____
 <h2>3: Notes<h2>
