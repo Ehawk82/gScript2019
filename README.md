@@ -4,20 +4,20 @@ ____
 a library specified to the code habits of Ehawk LLC
 <h1>TABLE OF CONTENTS</h1>
 
-<h4>1: Features<h4>
-<h4>2: Function Names<h4>
-<h4>3: Notes<h4>
+<h4>1: Features</h4>
+<h4>2: Function Names</h4>
+<h4>3: Notes</h4>
 
 ____
 
-<h2>1: Features<h2>
+<h2>1: Features</h2>
 
 - creating and removing nodes.
 - toggle class name "full" <sup>1</sup>
 - access to localStorage API
 
 ____
-<h2>2: Function Names<h2>
+<h2>2: Function Names</h2>
 
 <div><details><summary>bySel</summary><p>get elements by query selector</p><code>[object].bySel(x);</code></details></div>
 
@@ -46,7 +46,7 @@ ____
 <div><details><summary>removeLSitem</summary><p>remove a specific item from local storage</p><code>[object].removeLSitem(x);</code></details></div>
 
 ____
-<h2>3: Notes<h2>
+<h2>3: Notes</h2>
 
 <sup>1</sup> takeFull and makeFull will add/remove the string "\_full" on the class the className.  CSS transitions are required to custimize effects
 
