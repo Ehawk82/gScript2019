@@ -37,4 +37,3 @@ ____
 <h2>3: Notes</h2>
 
 <sup>1</sup> takeFull and makeFull will add/remove the string "\_full" on the class the className.  CSS transitions are required to custimize effects
-
