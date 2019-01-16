@@ -16,5 +16,5 @@ module.exports = { bySel: bySel, byId: byId, byClass: byClass,
 	               bySelAll: bySelAll, deleteThis: deleteThis, 
 	               makeFull: makeFull, takeFull: takeFull, 
 	               createEle: createEle, byTag: byTag,
-	               saveLS: saveItem, loadLS: loadLS, 
+	               saveLS: saveLS, loadLS: loadLS, 
 	               clearLS: clearLS, removeLSitem: removeLSitem };

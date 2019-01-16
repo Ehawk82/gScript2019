@@ -19,22 +19,22 @@ ____
 ____
 <h2>2: Function Names<h2>
 
-<div style='color:red;font-style: italic;'>bySel:</div>
-<div style='color:red;font-style: italic;'>byId:</div>
-<div style='color:red;font-style: italic;'>byClass:</div>
-<div style='color:red;font-style: italic;'>bySelAll:</div>
-<div style='color:red;font-style: italic;'>deleteThis:</div>
-<div style='color:red;font-style: italic;'>makeFull:</div>
-<div style='color:red;font-style: italic;'>takeFull:</div>
-<div style='color:red;font-style: italic;'>createEle:</div>
-<div style='color:red;font-style: italic;'>byTag:</div>
-<div style='color:red;font-style: italic;'>saveLS:</div>
-<div style='color:red;font-style: italic;'>loadLS:</div>
-<div style='color:red;font-style: italic;'>clearLS:</div>
-<div style='color:red;font-style: italic;'>removeLSitem:</div>
+<div>bySel: get elements by query selector<h6>[object].bySel(x);</h6></div>
+<div>byId: get elements by id<h6>[object].byId(x);</h6></div>
+<div>byClass: get elements by class name<h6>[object].byClass(x);</h6></div>
+<div>bySelAll: get all elements by query selector<h6>[object].bySelAll(x);</h6></div>
+<div>deleteThis: delete the element<h6>[object].deleteThis(x);</h6></div>
+<div>makeFull: add "_full" to class name<h6>[object].makeFull(x);</h6></div>
+<div>takeFull: remove "_full" from class name<h6>[object].takeFull(x);</h6></div>
+<div>createEle: create a mew element<h6>[object].createEle(x);</h6></div>
+<div>byTag: get elements by tag name<h6>[object].byTag(x,y);</h6></div>
+<div>saveLS: save and stringify the local storage item<h6>[object].saveLS(x,y);</h6></div>
+<div>loadLS: load a local storage item<h6>[object].loadLS(x);</h6></div>
+<div>clearLS: clear the local storage<h6>[object].clearLS(x);</h6></div>
+<div>removeLSitem: remove a specific item from local storage<h6>[object].removeLSitem(x);</h6></div>
 
 ____
 <h2>3: Notes<h2>
 
-<sup>1</sup> takeFull and makeFull will add/remove the string ""_" _full_" on the class the className.  CSS transitions are required to custimize effects
+<sup>1</sup> takeFull and makeFull will add/remove the string "\_full" on the class the className.  CSS transitions are required to custimize effects
 
