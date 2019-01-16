@@ -19,22 +19,22 @@ ____
 ____
 <h2>2: Function Names<h2>
 
-<span style='color:red;font-style: italic;'>bySel:</span>
-<span style='color:red;font-style: italic;'>byId:</span>
-<span style='color:red;font-style: italic;'>byClass:</span>
-<span style='color:red;font-style: italic;'>bySelAll:</span>
-<span style='color:red;font-style: italic;'>deleteThis:</span>
-<span style='color:red;font-style: italic;'>makeFull:</span>
-<span style='color:red;font-style: italic;'>takeFull:</span>
-<span style='color:red;font-style: italic;'>createEle:</span>
-<span style='color:red;font-style: italic;'>byTag:</span>
-<span style='color:red;font-style: italic;'>saveLS:</span>
-<span style='color:red;font-style: italic;'>loadLS:</span>
-<span style='color:red;font-style: italic;'>clearLS:</span>
-<span style='color:red;font-style: italic;'>removeLSitem:</span>
+<div style='color:red;font-style: italic;'>bySel:</div>
+<div style='color:red;font-style: italic;'>byId:</div>
+<div style='color:red;font-style: italic;'>byClass:</div>
+<div style='color:red;font-style: italic;'>bySelAll:</div>
+<div style='color:red;font-style: italic;'>deleteThis:</div>
+<div style='color:red;font-style: italic;'>makeFull:</div>
+<div style='color:red;font-style: italic;'>takeFull:</div>
+<div style='color:red;font-style: italic;'>createEle:</div>
+<div style='color:red;font-style: italic;'>byTag:</div>
+<div style='color:red;font-style: italic;'>saveLS:</div>
+<div style='color:red;font-style: italic;'>loadLS:</div>
+<div style='color:red;font-style: italic;'>clearLS:</div>
+<div style='color:red;font-style: italic;'>removeLSitem:</div>
 
 ____
 <h2>3: Notes<h2>
-	
+
 <sup>1</sup> takeFull and makeFull will add/remove the string ""_" _full_" on the class the className.  CSS transitions are required to custimize effects
 
