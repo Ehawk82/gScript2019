@@ -19,19 +19,19 @@ ____
 ____
 <h2>2: Function Names<h2>
 
-<div>bySel: get elements by query selector<samp>[object].bySel(x);</samp></div>
-<div>byId: get elements by id<samp>[object].byId(x);</samp></div>
-<div>byClass: get elements by class name<samp>[object].byClass(x);</samp></div>
-<div>bySelAll: get all elements by query selector<samp>[object].bySelAll(x);</samp></div>
-<div>deleteThis: delete the element<samp>[object].deleteThis(x);</samp></div>
-<div>makeFull: add "_full" to class name<samp>[object].makeFull(x);</samp></div>
-<div>takeFull: remove "_full" from class name<samp>[object].takeFull(x);</samp></div>
-<div>createEle: create a mew element<samp>[object].createEle(x);</samp></div>
-<div>byTag: get elements by tag name<samp>[object].byTag(x,y);</samp></div>
-<div>saveLS: save and stringify the local storage item<samp>[object].saveLS(x,y);</samp></div>
-<div>loadLS: load a local storage item<samp>[object].loadLS(x);</samp></div>
-<div>clearLS: clear the local storage<samp>[object].clearLS(x);</samp></div>
-<div>removeLSitem: remove a specific item from local storage<samp>[object].removeLSitem(x);</samp></div>
+<div>bySel: get elements by query selector<blockquote >[object].bySel(x);</blockquote ></div>
+<div>byId: get elements by id<blockquote >[object].byId(x);</blockquote ></div>
+<div>byClass: get elements by class name<blockquote >[object].byClass(x);</blockquote ></div>
+<div>bySelAll: get all elements by query selector<blockquote >[object].bySelAll(x);</blockquote ></div>
+<div>deleteThis: delete the element<blockquote >[object].deleteThis(x);</blockquote ></div>
+<div>makeFull: add "_full" to class name<blockquote >[object].makeFull(x);</blockquote ></div>
+<div>takeFull: remove "_full" from class name<blockquote >[object].takeFull(x);</blockquote ></div>
+<div>createEle: create a mew element<blockquote >[object].createEle(x);</blockquote ></div>
+<div>byTag: get elements by tag name<blockquote >[object].byTag(x,y);</blockquote ></div>
+<div>saveLS: save and stringify the local storage item<blockquote >[object].saveLS(x,y);</blockquote ></div>
+<div>loadLS: load a local storage item<blockquote >[object].loadLS(x);</blockquote ></div>
+<div>clearLS: clear the local storage<blockquote >[object].clearLS(x);</blockquote ></div>
+<div>removeLSitem: remove a specific item from local storage<blockquote >[object].removeLSitem(x);</blockquote ></div>
 
 ____
 <h2>3: Notes<h2>
