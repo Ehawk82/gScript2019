@@ -19,19 +19,31 @@ ____
 ____
 <h2>2: Function Names<h2>
 
-<div>bySel: get elements by query selector<blockquote >[object].bySel(x);</blockquote ></div>
-<div>byId: get elements by id<blockquote >[object].byId(x);</blockquote ></div>
-<div>byClass: get elements by class name<blockquote >[object].byClass(x);</blockquote ></div>
-<div>bySelAll: get all elements by query selector<blockquote >[object].bySelAll(x);</blockquote ></div>
-<div>deleteThis: delete the element<blockquote >[object].deleteThis(x);</blockquote ></div>
-<div>makeFull: add "_full" to class name<blockquote >[object].makeFull(x);</blockquote ></div>
-<div>takeFull: remove "_full" from class name<blockquote >[object].takeFull(x);</blockquote ></div>
-<div>createEle: create a mew element<blockquote >[object].createEle(x);</blockquote ></div>
-<div>byTag: get elements by tag name<blockquote >[object].byTag(x,y);</blockquote ></div>
-<div>saveLS: save and stringify the local storage item<blockquote >[object].saveLS(x,y);</blockquote ></div>
-<div>loadLS: load a local storage item<blockquote >[object].loadLS(x);</blockquote ></div>
-<div>clearLS: clear the local storage<blockquote >[object].clearLS(x);</blockquote ></div>
-<div>removeLSitem: remove a specific item from local storage<blockquote >[object].removeLSitem(x);</blockquote ></div>
+<div>bySel: get elements by query selector<details><summary>usage</summary><p>[object].bySel(x);</p></details></div>
+
+<div>byId: get elements by id<details><summary>usage</summary><p>[object].byId(x);</p></details></div>
+
+<div>byClass: get elements by class name<details><summary>usage</summary><p>[object].byClass(x);</p></details></div>
+
+<div>bySelAll: get all elements by query selector<details><summary>usage</summary><p>[object].bySelAll(x);</p></details></div>
+
+<div>deleteThis: delete the element<details><summary>usage</summary><p>[object].deleteThis(x);</p></details></div>
+
+<div>makeFull: add "_full" to class name<details><summary>usage</summary><p>[object].makeFull(x);</p></details></div>
+
+<div>takeFull: remove "_full" from class name<details><summary>usage</summary><p>[object].takeFull(x);</p></details></div>
+
+<div>createEle: create a mew element<details><summary>usage</summary><p>[object].createEle(x);</p></details></div>
+
+<div>byTag: get elements by tag name<details><summary>usage</summary><p>[object].byTag(x,y);</p></details></div>
+
+<div>saveLS: save and stringify the local storage item<details><summary>usage</summary><p>[object].saveLS(x,y);</p></details></div>
+
+<div>loadLS: load a local storage item<details><summary>usage</summary><p>[object].loadLS(x);</p></details></div>
+
+<div>clearLS: clear the local storage<details><summary>usage</summary><p>[object].clearLS(x);</p></details></div>
+	
+<div>removeLSitem: remove a specific item from local storage<details><summary>usage</summary><p>[object].removeLSitem(x);</p></details></div>
 
 ____
 <h2>3: Notes<h2>
