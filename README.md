@@ -19,31 +19,31 @@ ____
 ____
 <h2>2: Function Names<h2>
 
-<div>bySel: get elements by query selector<details><summary>usage</summary><p>[object].bySel(x);</p></details></div>
+<div><details><summary>bySel</summary><p>get elements by query selector</p><code>[object].bySel(x);</code></details></div>
 
-<div>byId: get elements by id<details><summary>usage</summary><p>[object].byId(x);</p></details></div>
+<div><details><summary>byId</summary><p>get elements by id</p><code>[object].byId(x);</code></details></div>
 
-<div>byClass: get elements by class name<details><summary>usage</summary><p>[object].byClass(x);</p></details></div>
+<div><details><summary>byClass</summary><p>get elements by class name</p><code>[object].byClass(x);</code></details></div>
 
-<div>bySelAll: get all elements by query selector<details><summary>usage</summary><p>[object].bySelAll(x);</p></details></div>
+<div><details><summary>bySelAll</summary><p>get all elements by query selector</p><code>[object].bySelAll(x);</code></details></div>
 
-<div>deleteThis: delete the element<details><summary>usage</summary><p>[object].deleteThis(x);</p></details></div>
+<div><details><summary>deleteThis</summary><p>delete the element</p><code>[object].deleteThis(x);</code></details></div>
 
-<div>makeFull: add "_full" to class name<details><summary>usage</summary><p>[object].makeFull(x);</p></details></div>
+<div><details><summary>makeFull</summary><p>add "_full" to class name</p><code>[object].makeFull(x);</code></details></div>
 
-<div>takeFull: remove "_full" from class name<details><summary>usage</summary><p>[object].takeFull(x);</p></details></div>
+<div><details><summary>takeFull</summary><p>remove "_full" from class name</p><code>[object].takeFull(x);</code></details></div>
 
-<div>createEle: create a mew element<details><summary>usage</summary><p>[object].createEle(x);</p></details></div>
+<div><details><summary>createEle</summary><p>create a mew element</p><code>[object].createEle(x);</code></details></div>
 
-<div>byTag: get elements by tag name<details><summary>usage</summary><p>[object].byTag(x,y);</p></details></div>
+<div><details><summary>byTag</summary><p>get elements by tag name</p><code>[object].byTag(x,y);</code></details></div>
 
-<div>saveLS: save and stringify the local storage item<details><summary>usage</summary><p>[object].saveLS(x,y);</p></details></div>
+<div><details><summary>saveLS</summary><p>save and stringify the local storage item</p><code>[object].saveLS(x,y);</p></details></div>
 
-<div>loadLS: load a local storage item<details><summary>usage</summary><p>[object].loadLS(x);</p></details></div>
+<div><details><summary>loadLS</summary><p>load a local storage item</p><code>[object].loadLS(x);</code></details></div>
 
-<div>clearLS: clear the local storage<details><summary>usage</summary><p>[object].clearLS(x);</p></details></div>
+<div><details><summary>clearLS</summary><p>clear the local storage</p><code>[object].clearLS(x);</code></details></div>
 	
-<div>removeLSitem: remove a specific item from local storage<details><summary>usage</summary><p>[object].removeLSitem(x);</p></details></div>
+<div><details><summary>removeLSitem</summary><p>remove a specific item from local storage</p><code>[object].removeLSitem(x);</code></details></div>
 
 ____
 <h2>3: Notes<h2>
