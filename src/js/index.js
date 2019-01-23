@@ -13,11 +13,3 @@ function clearLS() { return localStorage.clear() };
 function removeLSitem(x) { return localStorage.removeItem(x) };
 function makeLock (x) { return x.className = x.className + "_locked" };
 function takeLock (x) { var y, z; return y = x.className.split("_locked"), z = y[0], x.className = z };
-
-module.exports = { bySel: bySel, byId: byId, byClass: byClass, 
-	               bySelAll: bySelAll, deleteThis: deleteThis, 
-	               makeFull: makeFull, takeFull: takeFull, 
-	               createEle: createEle, byTag: byTag,
-	               saveLS: saveLS, loadLS: loadLS, 
-	               clearLS: clearLS, removeLSitem: removeLSitem,
-	               makeLock: makeLock, takeLock: takeLock }; 
