@@ -12,6 +12,7 @@ function makeLock(x) { return x.className = x.className + "_locked" };
 function takeLock(x) { var y, z; return y = x.className.split("_locked"), z = y[0], x.className = z };
 
 /* localStorage returns */
+
 function saveLS(x, y) { return localStorage.saveItem(x, JSON.stringify(y)) };
 function loadLS(x) { return localStorage.getItem(x) };
 function clearLS() { return localStorage.clear() };
