@@ -15,7 +15,7 @@ ____
 - toggle class name "_locked"
 - creating and removing nodes
 - toggle class name "_full" <sup>1</sup>
-- access to localStorage API
+- access to localStorage API(under development)
 
 ____
 <h2>2: Function Names</h2>
