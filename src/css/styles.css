@@ -1,0 +1,17 @@
+body {
+	background-color: grey;
+}
+.holder {
+	box-shadow: 0 0 4px inset white;
+	height: 78vh;
+
+	width: 96vw;
+	padding: 1vw 1vh;
+}
+.txBox {
+	width:399px;
+	height: 100px;
+	margin:3px;
+	outline:none;
+	resize: none;
+}
