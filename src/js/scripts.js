@@ -106,24 +106,42 @@ var myUI = {
     makeHolder2: () => {
     	var holder2 = createEle("div"),
     	    lsLabel3 = createEle("div"), ls3Text = "",
-    	    loadBtn = createEle("button");
+    	    loadBtn = createEle("button"), loadLStoggle = "",
+    	    lsLoadIn = createEle("input");
+        
+        lsLoadIn.type = "text";
+        lsLoadIn.placeholder = "key name";
+        lsLoadIn.className = "ins2";
         
         if (localStorage.length === 0) {
              ls3Text = "3. 🔒";
+             loadLStoggle = "loadLS(key)";
+             loadBtn.disabled = true;
+             lsLoadIn.readOnly = true;
+             lsLoadIn.style.cursor = "default";
+
         } else {
              ls3Text = "3. Using the localStorage";
+             loadLStoggle = "loadLS(key)";
+             //loadBtn.disabled = true;
+             lsLoadIn.readOnly = false;
+             
         }
         
-        loadBtn.innerHTML = "LoadLS(key)";
-        loadBtn.className = "loadBtn"
+        loadBtn.innerHTML = loadLStoggle;
+        loadBtn.className = "loadBtn";
+        
 
         lsLabel3.innerHTML = ls3Text;
         lsLabel3.className = "labels";
+        lsLabel3.id = "lsLabel3";
 
     	holder2.className = "holder2";
     	holder2.append(lsLabel3);
-    	holder2.append(loadBtn);
+    	
 
+        holder2.append(lsLoadIn);
+        holder2.append(loadBtn);
     	demo.append(holder2);
 
     	myUI.makeHolder3();
@@ -131,14 +149,15 @@ var myUI = {
     makeHolder3: () => {
     	var holder3 = createEle("div"),
     	    lsLabel4 = createEle("div");
-        
+    	    
 
 
-        lsLabel4.innerHTML = "test";
-        lsLabel4.className = "labels";
+        lsLabel4.innerHTML = "&nbsp;";
+
 
     	holder3.className = "holder3";
     	holder3.append(lsLabel4);
+
 
     	demo.append(holder3);
     }
