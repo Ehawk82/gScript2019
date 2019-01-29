@@ -1,6 +1,5 @@
 var myUI = {
     init: () => {
-    	//clearLS();
         myUI.loadout();
     },
     loadout: () => {
@@ -37,7 +36,7 @@ var myUI = {
         }
             
 
-        clearAllBtn.innerHTML = "Clear All";
+        clearAllBtn.innerHTML = "clearLS()";
         clearAllBtn.className = "clearAllBtn";
         clearAllBtn.onclick = () => { clearLS(); location.reload(); };
 
@@ -53,7 +52,7 @@ var myUI = {
         keyIn.placeholder = "key name";
         keyIn.className = "ins";
 
-        initButton.innerHTML = " LSinit(key, item) ";
+        initButton.innerHTML = " LSinit(key, item)";
         initButton.disabled = true;
         initButton.className = "initButton"
         
@@ -85,8 +84,6 @@ var myUI = {
         holder.append(lsLabel2);
         holder.append(clearAllBtn);
 
-
-
         demo.append(holder);
         myUI.makeHolder2();
         myUI.makeHolder3();
@@ -107,50 +104,65 @@ var myUI = {
     },
     takeInput2: (lsLoadIn, txBox2, loadBtn) => {
     	return () => {
-    		
-    		if (lsLoadIn.value != "") {
-            loadBtn.disabled = false;
-    		} else {
-            loadBtn.disabled = true;
+    		for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+    			if (lsLoadIn.value != "") {
 
-    		}
+    				if (lsLoadIn.value === localStorage.key(i)) {
+						loadBtn.disabled = false;
+						loadBtn.onclick = myUI.loader(lsLoadIn, txBox2, loadBtn);
+						console.log(localStorage.key(i) + " false");
+    				} else {
+    					console.log(localStorage.key(i) + " true");
+    					loadBtn.onclick = null;
+    					loadBtn.disabled = true;
+    				}
+                	
+    			} else {
+                	loadBtn.disabled = true;
+    			}
+    	    }
     	};
+    },
+    loader: (lsLoadIn, txBox2, loadBtn) => {
+    	return () => {
+    		var LSelement = loadLS(lsLoadIn.value);
+    		txBox2.append(LSelement);
+    	}
     },
     makeHolder2: () => {
     	var holder2 = createEle("div"),
     	    lsLabel3 = createEle("div"), ls3Text = "",
     	    loadBtn = createEle("button"), loadLStoggle = "",
     	    lsLoadIn = createEle("input"), txBox2 = createEle("textarea");
-            
-
 
         lsLoadIn.type = "text";
         lsLoadIn.placeholder = "key name";
         lsLoadIn.className = "ins2";
         
         if (localStorage.length === 0) {
-             ls3Text = "3. 🔒";
+             ls3Text = "transparent";
              loadLStoggle = "loadLS(key)";
              
              lsLoadIn.readOnly = true;
              lsLoadIn.style.cursor = "default";
-
         } else {
-             ls3Text = "3. Using the localStorage";
+             
              loadLStoggle = "loadLS(key)";
-             
-
+             ls3Text = "black";
              lsLoadIn.readOnly = false;
-             
         }
+        
+
         txBox2.className = "txBox2";
+        txBox2.readOnly = true;
 
         loadBtn.innerHTML = loadLStoggle;
         loadBtn.className = "loadBtn";
         loadBtn.disabled = true;
         
-        lsLabel3.innerHTML = ls3Text;
+        lsLabel3.innerHTML = "3. Using the localStorage";
         lsLabel3.className = "labels";
+        lsLabel3.style.color = ls3Text;
         lsLabel3.id = "lsLabel3";
 
     	holder2.className = "holder2";
@@ -160,7 +172,6 @@ var myUI = {
         holder2.append(loadBtn);
     	demo.append(holder2);
         lsLoadIn.addEventListener('keyup', myUI.takeInput2(lsLoadIn, txBox2, loadBtn));
-    	
     },
     makeHolder3: () => {
     	var holder3 = createEle("div"),
@@ -169,10 +180,8 @@ var myUI = {
         lsLabel4.innerHTML = "&nbsp;";
         lsLabel4.id = "lsLabel4";
 
-
     	holder3.className = "holder3";
     	holder3.append(lsLabel4);
-
 
     	demo.append(holder3);
     }
