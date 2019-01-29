@@ -26,7 +26,14 @@ h4 {
 	margin:0;
 	text-indent: 0;
 }
-.clearAllBtn, .loadBtn {
+.loadBtn {
+	
+	clear:both;
+	float: left;
+	margin-left: 0;
+	margin-top: 6px;
+}
+.clearAllBtn {
 	width:404px;
 	clear:both;
 	float: left;
@@ -36,7 +43,7 @@ h4 {
     margin-top:5px;
     margin-right:2px;
     float:right;
-
+    height: 32px;
 }
 .spnHiLite {
 	color: darkred;
@@ -75,20 +82,20 @@ h4 {
 }
 .holder3 {
 	position: relative;
-	box-shadow: 0 0 4px inset white, 0 0 4px black;
+    background-color: rgba(255,255,255,0.5);
 	height: auto;
 
     margin-right: 5px;
     margin-bottom: 40px;
-
+    width:69.61px;
 	padding: 5px 5px;
 	float: left;
     flex:1;
 }
 .txBox {
-	width:97%;
+	width:98%;
 	height: 120px;
-	margin:3px;
+	margin:3px 0;
 	outline:none;
 	resize: none;
 	clear:both;
@@ -97,12 +104,22 @@ h4 {
 
 }
 .ins {
-	width:97px;
-	height:25px;
-	margin:4px;
+	width:130px;
+	height:26px;
+	margin:5px 0;
+
 	text-indent: 10px;
 	outline:none;
     float:left;
+	box-shadow: 0 0 2px inset white, 0 0 2px black;
+}
+.ins2 {
+	width:150px;
+	height:26px;
+	margin:5px 0;
+	text-indent: 10px;
+	outline:none;
+
 	box-shadow: 0 0 2px inset white, 0 0 2px black;
 }
 .labels {
@@ -131,4 +148,7 @@ cursor:default;
 #demo {
     display: flex;
     flex-direction: row;
+}
+#lsLabel3 {
+	width:628px;
 }
