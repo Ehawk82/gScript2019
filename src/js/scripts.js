@@ -19,19 +19,20 @@ var myUI = {
 
         if (localStorage.length === 0) {
         	lsObject = " - there is no data in your localStorage - ";
-        	lslabelToggle1.innerHTML = "2. 🔒";
-
+            lslabelToggle1.style.color = "transparent";
+        	
+            
         	clearAllBtn.disabled = true;
         	lsWarn.style.color = "transparent";
         	lsWarn.innerHTML = "<span class='spnHiLite' style='opacity:0;'>*WARNING*</span><span class='spnCode' style='opacity:0;'>clearLS();</span>takes no params and will clear ALL storage.  Be sure you want to do this before hand. It may be a good idea to alert users if you plan on putting this function on an application";
         } else {
         	for ( var i = 0, len = localStorage.length; i < len; ++i ) {
             lsObject += "[" + localStorage.key( i ) + "][" + localStorage.getItem( localStorage.key( i ) ) + "] - ";
-            lslabelToggle1.innerHTML = "2. Loading, saving, updating -made easy";
+            lslabelToggle1.style.color = "black";
 
         	clearAllBtn.disabled = false;
         	lsWarn.style.color = "black";
-         lsWarn.innerHTML = "<span class='spnHiLite'>*WARNING*</span><span class='spnCode'>clearLS();</span>takes no params and will clear ALL storage.  Be sure you want to do this before hand. It may be a good idea to alert users if you plan on putting this function on an application";
+            lsWarn.innerHTML = "<span class='spnHiLite'>*WARNING*</span><span class='spnCode'>clearLS();</span>takes no params and will clear ALL storage.  Be sure you want to do this before hand. It may be a good idea to alert users if you plan on putting this function on an application";
             }
         }
             
@@ -65,7 +66,8 @@ var myUI = {
         lsBonusLabel1.innerHTML = "<span class='spnHiLite'> RESERVED ITEM NAMES </span> <br /><h4>Place any of the following names as a string in the item input to generate a template JSON array</h4><br /><span class='spnCode'>basicUser</span><span class='spnCode'>midUser</span><span class='spnCode'>hiUser</span><br/>&nbsp;<br />(TRY ONE)";
         lsBonusLabel1.className = "labels";
 
-        lslabelToggle1.className = "labels"
+        lslabelToggle1.className = "labels";
+        lslabelToggle1.innerHTML = "2. Loading, saving, updating -made easy";
 
         lsLabel2.append(lsWarn);
         lsLabel2.className = "labels";
@@ -86,8 +88,8 @@ var myUI = {
 
 
         demo.append(holder);
-        myUI.makeHolder2(holder);
-        
+        myUI.makeHolder2();
+        myUI.makeHolder3();
         keyIn.addEventListener('keyup', myUI.takeInput(keyIn, itemIn, initButton, txBox));
         itemIn.addEventListener('keyup', myUI.takeInput(keyIn, itemIn, initButton, txBox));
     },
@@ -103,12 +105,25 @@ var myUI = {
     		}
     	};
     },
+    takeInput2: (lsLoadIn, txBox2, loadBtn) => {
+    	return () => {
+    		
+    		if (lsLoadIn.value != "") {
+            loadBtn.disabled = false;
+    		} else {
+            loadBtn.disabled = true;
+
+    		}
+    	};
+    },
     makeHolder2: () => {
     	var holder2 = createEle("div"),
     	    lsLabel3 = createEle("div"), ls3Text = "",
     	    loadBtn = createEle("button"), loadLStoggle = "",
-    	    lsLoadIn = createEle("input");
-        
+    	    lsLoadIn = createEle("input"), txBox2 = createEle("textarea");
+            
+
+
         lsLoadIn.type = "text";
         lsLoadIn.placeholder = "key name";
         lsLoadIn.className = "ins2";
@@ -116,43 +131,43 @@ var myUI = {
         if (localStorage.length === 0) {
              ls3Text = "3. 🔒";
              loadLStoggle = "loadLS(key)";
-             loadBtn.disabled = true;
+             
              lsLoadIn.readOnly = true;
              lsLoadIn.style.cursor = "default";
 
         } else {
              ls3Text = "3. Using the localStorage";
              loadLStoggle = "loadLS(key)";
-             //loadBtn.disabled = true;
+             
+
              lsLoadIn.readOnly = false;
              
         }
-        
+        txBox2.className = "txBox2";
+
         loadBtn.innerHTML = loadLStoggle;
         loadBtn.className = "loadBtn";
+        loadBtn.disabled = true;
         
-
         lsLabel3.innerHTML = ls3Text;
         lsLabel3.className = "labels";
         lsLabel3.id = "lsLabel3";
 
     	holder2.className = "holder2";
     	holder2.append(lsLabel3);
-    	
-
+        holder2.append(txBox2);
         holder2.append(lsLoadIn);
         holder2.append(loadBtn);
     	demo.append(holder2);
-
-    	myUI.makeHolder3();
+        lsLoadIn.addEventListener('keyup', myUI.takeInput2(lsLoadIn, txBox2, loadBtn));
+    	
     },
     makeHolder3: () => {
     	var holder3 = createEle("div"),
     	    lsLabel4 = createEle("div");
-    	    
-
 
         lsLabel4.innerHTML = "&nbsp;";
+        lsLabel4.id = "lsLabel4";
 
 
     	holder3.className = "holder3";
