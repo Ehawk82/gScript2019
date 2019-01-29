@@ -5,20 +5,41 @@ var myUI = {
     },
     loadout: () => {
         var holder = createEle("div"),
+            lsLabel = createEle("div"),
+            lsBonusLabel1 = createEle("div"),
+            lsLabel2 = createEle("div"),
+            lsTitle1 = createEle("div"),
             keyIn = createEle("input"),
             itemIn = createEle("input"),
             initButton = createEle("button"),
             txBox = createEle("textarea"),
-            br = createEle("br"), lsObject ="";
+            lsObject = "", lslabelToggle1 = createEle("div"),
+            br1 = createEle("br"),
+            clearAllBtn = createEle("button"), lsWarn =createEle("div");
 
         if (localStorage.length === 0) {
-        	lsObject = " there is no data in your localStorage";
+        	lsObject = " - there is no data in your localStorage - ";
+        	lslabelToggle1.innerHTML = "2. 🔒";
+
+        	clearAllBtn.disabled = true;
+        	lsWarn.style.color = "transparent";
+        	lsWarn.innerHTML = "<span class='spnHiLite' style='opacity:0;'>*WARNING*</span><span class='spnCode' style='opacity:0;'>clearLS();</span>takes no params and will clear ALL storage.  Be sure you want to do this before hand. It may be a good idea to alert users if you plan on putting this function on an application";
         } else {
         	for ( var i = 0, len = localStorage.length; i < len; ++i ) {
-            lsObject += "[" + localStorage.key( i ) + "] = " + localStorage.getItem( localStorage.key( i ) ) + " - ";
+            lsObject += "[" + localStorage.key( i ) + "][" + localStorage.getItem( localStorage.key( i ) ) + "] - ";
+            lslabelToggle1.innerHTML = "2. Loading, saving, updating -made easy";
+
+        	clearAllBtn.disabled = false;
+        	lsWarn.style.color = "black";
+         lsWarn.innerHTML = "<span class='spnHiLite'>*WARNING*</span><span class='spnCode'>clearLS();</span>takes no params and will clear ALL storage.  Be sure you want to do this before hand. It may be a good idea to alert users if you plan on putting this function on an application";
             }
-        	
         }
+            
+
+        clearAllBtn.innerHTML = "Clear All";
+        clearAllBtn.className = "clearAllBtn";
+        clearAllBtn.onclick = () => { clearLS(); location.reload(); };
+
         txBox.readOnly = true;
         txBox.className = "txBox";
         txBox.value = lsObject;
@@ -31,21 +52,42 @@ var myUI = {
         keyIn.placeholder = "key name";
         keyIn.className = "ins";
 
-        initButton.innerHTML = " LSinit() ";
+        initButton.innerHTML = " LSinit(key, item) ";
         initButton.disabled = true;
+        initButton.className = "initButton"
+        
+        lsTitle1.innerHTML = "1. Initializing localStorage";
+        lsTitle1.className = "labels";
 
-        holder.innerHTML = "&nbsp;";
+        lsLabel.innerHTML = "To use this demo with the localStorage functions, start by initializing the object. <br />&nbsp;<br /> The <span class='spnCode'>LSinit(key,item);</span> function will take two params, the keyname, and the string or JSON object The text area shows what is in your localStorage.";
+        lsLabel.className = "labels";
+        
+        lsBonusLabel1.innerHTML = "<span class='spnHiLite'> RESERVED ITEM NAMES </span> <br /><h4>Place any of the following names as a string in the item input to generate a template JSON array</h4><br /><span class='spnCode'>basicUser</span><span class='spnCode'>midUser</span><span class='spnCode'>hiUser</span><br/>&nbsp;<br />(TRY ONE)";
+        lsBonusLabel1.className = "labels";
+
+        lslabelToggle1.className = "labels"
+
+        lsLabel2.append(lsWarn);
+        lsLabel2.className = "labels";
+
         holder.className = "holder";
+        holder.append(lsTitle1);
+        holder.append(lsLabel);
+        holder.append(lsBonusLabel1);
         holder.append(keyIn);
         holder.append(itemIn);
         holder.append(initButton);
-        holder.append(br);
+        holder.append(br1);
         holder.append(txBox);
+        holder.append(lslabelToggle1);
+        holder.append(lsLabel2);
+        holder.append(clearAllBtn);
 
-        demo.innerHTML = "<h1>The gScript DEMO page</h1>";
+
 
         demo.append(holder);
-
+        myUI.makeHolder2(holder);
+        
         keyIn.addEventListener('keyup', myUI.takeInput(keyIn, itemIn, initButton, txBox));
         itemIn.addEventListener('keyup', myUI.takeInput(keyIn, itemIn, initButton, txBox));
     },
@@ -55,8 +97,50 @@ var myUI = {
                 initButton.disabled = false;
                 initButton.onclick = () => { return LSinit(keyIn.value, itemIn.value), location.reload() };
                 
+    		} else {
+    			initButton.disabled = true;
+                initButton.onclick = null;
     		}
     	};
+    },
+    makeHolder2: () => {
+    	var holder2 = createEle("div"),
+    	    lsLabel3 = createEle("div"), ls3Text = "",
+    	    loadBtn = createEle("button");
+        
+        if (localStorage.length === 0) {
+             ls3Text = "3. 🔒";
+        } else {
+             ls3Text = "3. Using the localStorage";
+        }
+        
+        loadBtn.innerHTML = "LoadLS(key)";
+        loadBtn.className = "loadBtn"
+
+        lsLabel3.innerHTML = ls3Text;
+        lsLabel3.className = "labels";
+
+    	holder2.className = "holder2";
+    	holder2.append(lsLabel3);
+    	holder2.append(loadBtn);
+
+    	demo.append(holder2);
+
+    	myUI.makeHolder3();
+    },
+    makeHolder3: () => {
+    	var holder3 = createEle("div"),
+    	    lsLabel4 = createEle("div");
+        
+
+
+        lsLabel4.innerHTML = "test";
+        lsLabel4.className = "labels";
+
+    	holder3.className = "holder3";
+    	holder3.append(lsLabel4);
+
+    	demo.append(holder3);
     }
 };
 

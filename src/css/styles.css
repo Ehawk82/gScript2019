@@ -1,17 +1,134 @@
+html, body {
+
+}
 body {
 	background-color: grey;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 600;
+    font-size:.9em;
+}
+button {
+	box-shadow: 0 0 2px inset white, 0 0 2px black;
+    cursor: pointer;
+    height:31px;
+
+    color:black;
+}
+button:disabled{
+	box-shadow: 0 0 30px inset black, 0 0 0px black;
+	cursor: not-allowed;
+	color:transparent;
+}
+
+h4 {
+	box-shadow: 0 0 4px inset black, 0 0 4px white;
+	padding:8px;
+	margin:0;
+	text-indent: 0;
+}
+.clearAllBtn, .loadBtn {
+	width:404px;
+	clear:both;
+	float: left;
+	margin-top: 4px;
+}
+.initButton {
+    margin-top:5px;
+    margin-right:2px;
+    float:right;
+
+}
+.spnHiLite {
+	color: darkred;
+	padding: 2px 8px; 
+}
+.spnCode {
+	background-color: white;
+	padding: 2px 8px;
+	margin: 0 2px;
 }
 .holder {
-	box-shadow: 0 0 4px inset white;
-	height: 78vh;
+	position: relative;
+	box-shadow: 0 0 4px inset white, 0 0 4px black;
+	height: auto;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 40px;
+    text-align: center;
+	padding: 5px 5px;
+	float: left;
+    flex:1;
 
-	width: 96vw;
-	padding: 1vw 1vh;
+}
+.holder2 {
+	position: relative;
+	box-shadow: 0 0 4px inset white, 0 0 4px black;
+	height: auto;
+
+    margin-right: 5px;
+    margin-bottom: 40px;
+
+	padding: 5px 5px;
+	float: left;
+    
+    flex:1;
+}
+.holder3 {
+	position: relative;
+	box-shadow: 0 0 4px inset white, 0 0 4px black;
+	height: auto;
+
+    margin-right: 5px;
+    margin-bottom: 40px;
+
+	padding: 5px 5px;
+	float: left;
+    flex:1;
 }
 .txBox {
-	width:399px;
-	height: 100px;
+	width:97%;
+	height: 120px;
 	margin:3px;
 	outline:none;
 	resize: none;
+	clear:both;
+	float: left;
+	box-shadow: 0 0 2px inset white, 0 0 2px black;
+
+}
+.ins {
+	width:97px;
+	height:25px;
+	margin:4px;
+	text-indent: 10px;
+	outline:none;
+    float:left;
+	box-shadow: 0 0 2px inset white, 0 0 2px black;
+}
+.labels {
+	background-color: silver;
+	width:93%;
+	text-indent: 8px;
+    text-align: left;
+	padding: 5px 13px;
+	clear:both;
+	float: left;
+
+	box-shadow: 0 0 2px inset white, 0 0 2px black;
+}
+
+.labels, .ins, .txBox, .spnCode {
+	box-shadow: 0 0 2px inset white, 0 0 2px black;
+}
+.holder, .labels, .spnCode, .spnHiLite {
+cursor:default;
+
+}
+.holder, .labels, .ins, .txBox {
+	transition: 700ms all;
+
+}
+#demo {
+    display: flex;
+    flex-direction: row;
 }
