@@ -16,7 +16,7 @@ ____
 - creating and removing nodes
 - toggle class name "_full" <sup>1</sup>
 - access to localStorage API(under development)
-
+-can get size of elements and client screen sizes
 ____
 <h2>2: Function Names</h2>
 
@@ -35,7 +35,8 @@ ____
 <div><details><summary>removeLSitem</summary><p>remove a specific item from local storage</p><code> removeLSitem(x);</code></details></div>
 <div><details><summary>makeLock</summary><p>add "_locked" to class</p><code>makeLock(x);</code></details></div>
 <div><details><summary>takeLock</summary><p>removes "_locked" from class</p><code>takeLock(x);</code></details></div>
-
+<div><details><summary>myHeight</summary><p>get's the height of any element, use <code>screen</code>for client scren size</p><code>myHeight(x);</code></details></div>
+<div><details><summary>myWidth</summary><p>get's the width of any element, use <code>screen</code>for client scren size</p><code>myWidth(x);</code></details></div>
 ____
 <h2>3: Notes</h2>
 
