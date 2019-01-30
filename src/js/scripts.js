@@ -1,5 +1,9 @@
 var myUI = {
     init: () => {
+        var h = myHeight(screen, "px");
+
+        console.log(h);
+
         myUI.loadout();
     },
     loadout: () => {
@@ -108,10 +112,12 @@ var myUI = {
     			if (lsLoadIn.value != "") {
 
     				if (lsLoadIn.value === localStorage.key(i)) {
-						loadBtn.disabled = false;
+						/*pile of crap code*/
+                        loadBtn.disabled = false;
 						loadBtn.onclick = myUI.loader(lsLoadIn, txBox2, loadBtn);
 						console.log(localStorage.key(i) + " false");
     				} else {
+                        /*pile of crap code*/
     					console.log(localStorage.key(i) + " true");
     					loadBtn.onclick = null;
     					loadBtn.disabled = true;
