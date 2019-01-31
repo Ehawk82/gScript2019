@@ -10,7 +10,8 @@ function createEle(x) { return document.createElement(x) };
 function byTag(x, y) { if (!y || y === null) {y = 0}  return document.getElementsByTagName(x)[y] };
 function makeLock(x) { return x.className = x.className + "_locked" };
 function takeLock(x) { var y, z; return y = x.className.split("_locked"), z = y[0], x.className = z };
-function myHeight(x, y) { return x.height + y };
+function myHeight() { return screen.height };
+function myWidth() { return screen.width };
 /* localStorage returns */
 var ts = Math.round(new Date().getTime()/1000);
 

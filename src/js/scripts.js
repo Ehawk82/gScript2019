@@ -2,7 +2,7 @@ var myUI = {
     init: () => {
         var h = myHeight(screen, "px");
 
-        console.log(h);
+        console.log(h + "px");
 
         myUI.loadout();
     },
