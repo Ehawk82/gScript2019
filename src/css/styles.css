@@ -66,18 +66,16 @@ h4 {
 	margin: 0 2px;
 }
 .holder {
-	position: relative;
+    position: relative;
 	box-shadow: 0 0 4px inset white, 0 0 4px black;
 	height: auto;
-
     margin-right: 5px;
     margin-left: 5px;
     margin-bottom: 40px;
 
-	padding: 5px 5px;
-
-    flex:1;
+	padding: 5px 0;
     width:370px !important;
+    max-width: 360px;
 
 }
 .holder2 {
@@ -91,7 +89,7 @@ h4 {
 	padding: 5px 5px;
 	float: left;
     
-    flex:1;
+
 }
 .holder3 {
 	position: relative;
@@ -103,8 +101,7 @@ h4 {
 
 	padding: 5px 5px;
 	float: left;
-
-    flex:1;
+    min-width:100px;
 }
 .txBox {
 	width:354px;
@@ -171,6 +168,7 @@ cursor:default;
 #demo {
     display: flex;
     flex-direction: row;
+    text-align: center;
 }
 #lsLabel3 {
 	width:628px;
