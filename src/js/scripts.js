@@ -111,17 +111,10 @@ var myUI = {
     		for ( var i = 0, len = localStorage.length; i < len; ++i ) {
     			if (lsLoadIn.value != "") {
 
-    				if (lsLoadIn.value === localStorage.key(i)) {
-						/*pile of crap code*/
+
                         loadBtn.disabled = false;
 						loadBtn.onclick = myUI.loader(lsLoadIn, txBox2, loadBtn);
-						console.log(localStorage.key(i) + " false");
-    				} else {
-                        /*pile of crap code*/
-    					console.log(localStorage.key(i) + " true");
-    					loadBtn.onclick = null;
-    					loadBtn.disabled = true;
-    				}
+
                 	
     			} else {
                 	loadBtn.disabled = true;
@@ -132,7 +125,15 @@ var myUI = {
     loader: (lsLoadIn, txBox2, loadBtn) => {
     	return () => {
     		var LSelement = loadLS(lsLoadIn.value);
-    		txBox2.append(LSelement);
+            if (!LSelement || LSelement === null) {
+
+                LSelement = "- - - [KEY DOES NOT MATCH ANY KEY IN LOCALSTORAGE] - - ";
+                txBox2.append(LSelement);
+            } else {
+                txBox2.append(LSelement);
+            }
+            
+    		
     	}
     },
     makeHolder2: () => {
