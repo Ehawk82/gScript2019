@@ -143,7 +143,7 @@ h4 {
 	clear:both;
 	float: left;
 
-	box-shadow: 0 0 2px inset white, 0 0 2px black;
+	box-shadow: 0 0 2px inset white, 0 0 6px pink;
 }
 .txBox2 {
 	clear:left;
@@ -155,7 +155,7 @@ h4 {
 	outline:none;
 }
 .labels, .ins, .txBox, .spnCode, .txBox2 {
-	box-shadow: 0 0 2px inset white, 0 0 2px black;
+	box-shadow: 0 0 2px inset white, 0 0 6px slategrey;
 }
 .holder, .labels, .spnCode, .spnHiLite {
 cursor:default;
