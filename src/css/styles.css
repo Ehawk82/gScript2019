@@ -1,9 +1,10 @@
 html, body {
-    -webkit-user-select: none; /* Safari */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+    -webkit-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none;
+            user-select: none; 
+            transition: 700ms all;
+
 }
 body {
 	background-color: darkgrey;
@@ -36,13 +37,14 @@ h4 {
   background: #ffb7b7;
   color: darkred;
 }
-.loadBtn {
+.loadBtn,.lsRmvBtn {
     height: 32px;
     
 	float: left;
 	margin-left: 0;
 	margin-top: 5px;
 }
+
 .clearAllBtn {
 	width:360px;
 	clear:both;
@@ -72,7 +74,7 @@ h4 {
     margin-right: 5px;
     margin-left: 5px;
     margin-bottom: 40px;
-
+background-color: silver;
 	padding: 5px 0;
     width:370px !important;
     max-width: 360px;
@@ -82,7 +84,7 @@ h4 {
 	position: relative;
 	box-shadow: 0 0 4px inset white, 0 0 4px black;
 	height: auto;
-
+    background-color: silver;
     margin-right: 5px;
     margin-bottom: 40px;
 
@@ -95,24 +97,27 @@ h4 {
 	position: relative;
     background-color: rgba(255,255,255,0.3);
 	height: auto;
-
+    box-shadow: 0 0 4px inset white, 0 0 4px black;
     margin-right: 5px;
     margin-bottom: 40px;
-
+background-color: silver;
 	padding: 5px 5px;
 	float: left;
     min-width:100px;
 }
 .txBox {
-	width:354px;
+	width:339px;
 	height: 120px;
 	margin:3px 0;
 	outline:none;
+padding:0 10px;
 	resize: none;
 	clear:both;
 	float: left;
 	box-shadow: 0 0 2px inset white, 0 0 2px black;
-  
+  font-size: .9em;
+ font-weight: 400;
+ font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 .ins {
@@ -139,7 +144,7 @@ h4 {
 	width:334px;
 	text-indent: 8px;
     text-align: left;
-	padding: 5px 13px;
+	padding: 10px 13px;
 	clear:both;
 	float: left;
 
@@ -149,10 +154,15 @@ h4 {
 	clear:left;
 	float:right;
 	margin-top:5px;
-	height:540px;
-	width:400px;
+	margin-right:-1px;
+	height:31px;
+	width:384px;
 	resize: none;
 	outline:none;
+	font-size: .9em;
+	padding:0 10px;
+ font-weight: 400;
+ font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 .labels, .ins, .txBox, .spnCode, .txBox2 {
 	box-shadow: 0 0 2px inset white, 0 0 6px slategrey;
@@ -170,7 +180,7 @@ cursor:default;
     flex-direction: row;
     margin:0 auto;
     width:fit-content;
-
+background-color: darkgrey;
 }
 #lsLabel3 {
 	width:628px;

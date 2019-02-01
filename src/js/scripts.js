@@ -139,22 +139,26 @@ var myUI = {
     makeHolder2: () => {
     	var holder2 = createEle("div"),
     	    lsLabel3 = createEle("div"), ls3Text = "",
-    	    loadBtn = createEle("button"), loadLStoggle = "",
-    	    lsLoadIn = createEle("input"), txBox2 = createEle("textarea");
+    	    loadBtn = createEle("button"), lsRmvBtn = createEle("button"),
+    	    lsLoadIn = createEle("input"), lsRmvIn = createEle("input"), txBox2 = createEle("textarea");
 
         lsLoadIn.type = "text";
-        lsLoadIn.placeholder = "key name";
+        lsLoadIn.placeholder = "load key";
         lsLoadIn.className = "ins2";
         
+        lsRmvIn.type = "text";
+        lsRmvIn.placeholder = "remove key";
+        lsRmvIn.className = "ins2";
+
         if (localStorage.length === 0) {
              ls3Text = "transparent";
-             loadLStoggle = "loadLS(key)";
+  
              
              lsLoadIn.readOnly = true;
              lsLoadIn.style.cursor = "default";
         } else {
              
-             loadLStoggle = "loadLS(key)";
+    
              ls3Text = "black";
              lsLoadIn.readOnly = false;
         }
@@ -163,7 +167,13 @@ var myUI = {
         txBox2.className = "txBox2";
         txBox2.readOnly = true;
 
-        loadBtn.innerHTML = loadLStoggle;
+        
+
+        lsRmvBtn.innerHTML = "removeLSitem(key)";
+        lsRmvBtn.className = "lsRmvBtn";
+        lsRmvBtn.disabled = true;
+
+        loadBtn.innerHTML = "loadLS(key)";
         loadBtn.className = "loadBtn";
         loadBtn.disabled = true;
         
@@ -177,7 +187,11 @@ var myUI = {
         holder2.append(txBox2);
         holder2.append(lsLoadIn);
         holder2.append(loadBtn);
+        //holder2.append(lsRmvIn)
+        //holder2.append(lsRmvBtn);
+
     	demo.append(holder2);
+
         lsLoadIn.addEventListener('keyup', myUI.takeInput2(lsLoadIn, txBox2, loadBtn));
     },
     makeHolder3: () => {
