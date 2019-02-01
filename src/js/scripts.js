@@ -155,12 +155,16 @@ var myUI = {
   
              
              lsLoadIn.readOnly = true;
+             lsRmvIn.readOnly = true;
              lsLoadIn.style.cursor = "default";
+             lsRmvIn.style.cursor = "default";
         } else {
              
     
              ls3Text = "black";
              lsLoadIn.readOnly = false;
+             lsRmvIn.readOnly = false;
+
         }
         
 
@@ -187,8 +191,8 @@ var myUI = {
         holder2.append(txBox2);
         holder2.append(lsLoadIn);
         holder2.append(loadBtn);
-        //holder2.append(lsRmvIn)
-        //holder2.append(lsRmvBtn);
+        holder2.append(lsRmvIn)
+        holder2.append(lsRmvBtn);
 
     	demo.append(holder2);
 
@@ -198,8 +202,10 @@ var myUI = {
     	var holder3 = createEle("div"),
     	    lsLabel4 = createEle("div");
 
-        lsLabel4.innerHTML = "&nbsp;";
+        lsLabel4.innerHTML = "LABEL";
+        lsLabel4.className = "labels";
         lsLabel4.id = "lsLabel4";
+
 
     	holder3.className = "holder3";
     	holder3.append(lsLabel4);
