@@ -17,7 +17,7 @@ button {
 	box-shadow: 0 0 2px inset white, 0 0 2px black;
     cursor: pointer;
     height:31px;
-
+    border:none;
     color:black;
 }
 button:disabled{
@@ -34,12 +34,12 @@ h4 {
 	text-indent: 0;
 }
 ::selection {
-  background: #ffb7b7;
-  color: darkred;
+  background: #FFBBFF;
+  color: #7B0DFF;
 }
 .loadBtn,.lsRmvBtn {
     height: 32px;
-    
+    width:84px;
 	float: left;
 	margin-left: 0;
 	margin-top: 5px;
@@ -56,7 +56,7 @@ h4 {
 
     float: left;
     height: 33px;
-    width:102px;
+    width:110px;
 }
 .spnHiLite {
 	color: darkred;
@@ -88,9 +88,9 @@ background-color: silver;
     margin-right: 5px;
     margin-bottom: 40px;
 
-	padding: 5px 5px;
+	padding: 5px 0;
 	float: left;
-    
+    max-width: 654px;
 
 }
 .holder3 {
@@ -101,17 +101,20 @@ background-color: silver;
     margin-right: 5px;
     margin-bottom: 40px;
 background-color: silver;
-	padding: 5px 5px;
+	padding: 5px 0;
 	float: left;
     min-width:100px;
+    max-width:100px;
+    
 }
 .txBox {
-	width:339px;
+	width:340px;
 	height: 120px;
 	margin:3px 0;
 	outline:none;
 padding:0 10px;
 	resize: none;
+	border:none;
 	clear:both;
 	float: left;
 	box-shadow: 0 0 2px inset white, 0 0 2px black;
@@ -122,22 +125,22 @@ padding:0 10px;
 
 .ins {
 	width:125px;
-	height:26px;
+	height:31px;
 	margin:5px 0;
-
+    border:none;
 	text-indent: 10px;
 	outline:none;
     float:left;
 	box-shadow: 0 0 2px inset white, 0 0 2px black;
 }
 .ins2 {
-	width:150px;
-	height:26px;
+	width:164px;
+	height:30px;
 	margin:5px 0;
 	text-indent: 10px;
 	outline:none;
+    border:none;
 
-	box-shadow: 0 0 2px inset white, 0 0 2px black;
 }
 .labels {
 	background-color: silver;
@@ -154,9 +157,10 @@ padding:0 10px;
 	clear:left;
 	float:right;
 	margin-top:5px;
-	margin-right:-1px;
-	height:31px;
+	margin-right:0;
+	height:638px;
 	width:384px;
+	border:none;
 	resize: none;
 	outline:none;
 	font-size: .9em;
@@ -186,6 +190,9 @@ background-color: darkgrey;
 	width:628px;
 }
 #lsLabel4 {
-	width:100%;
-	background-color: orange;
+	width: 100%;
+	background-color: lightgrey;
+	box-shadow: 0 0 6px inset white;
+	padding: 10px 0 ;
+	text-align: center;
 }
