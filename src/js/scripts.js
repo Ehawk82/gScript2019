@@ -63,7 +63,7 @@ var myUI = {
         lsTitle1.innerHTML = "1. Initializing localStorage";
         lsTitle1.className = "labels";
 
-        lsLabel.innerHTML = "To use this demo with the localStorage functions, start by initializing the object. <br />&nbsp;<br /> The <span class='spnCode'>LSinit(key,item);</span> function will take two params, the keyname, and the string or JSON object The text area shows what is in your localStorage.";
+        lsLabel.innerHTML = "To use this demo with the localStorage functions, start by initializing the object. <br />&nbsp;<br /> The <span class='spnCode'>LSinit(key,item);</span> function will take two params, the keyname, and the string or JSON object. The text area shows what is in your localStorage.";
         lsLabel.className = "labels";
         
         lsBonusLabel1.innerHTML = "<span class='spnHiLite'> RESERVED ITEM NAMES </span> <br /><h4>Place any of the following names as a string in the item input to generate a template JSON array</h4><br /><span class='spnCode'>basicUser</span><span class='spnCode'>midUser</span><span class='spnCode'>hiUser</span><br/>&nbsp;<br />(TRY ONE)";
@@ -122,12 +122,28 @@ var myUI = {
     	    }
     	};
     },
+    takeInput3: (lsRmvIn, txBox2, lsRmvBtn) => {
+        return () => {
+            for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+                if (lsRmvIn.value != "") {
+
+
+                        lsRmvBtn.disabled = false;
+                        lsRmvBtn.onclick = myUI.loader2(lsRmvIn, txBox2, lsRmvBtn);
+
+                    
+                } else {
+                    lsRmvBtn.disabled = true;
+                }
+            }
+        };
+    },
     loader: (lsLoadIn, txBox2, loadBtn) => {
     	return () => {
     		var LSelement = loadLS(lsLoadIn.value);
             if (!LSelement || LSelement === null) {
 
-                LSelement = "- - - [KEY DOES NOT MATCH ANY KEY IN LOCALSTORAGE] - - ";
+                LSelement = " -[KEY DOES NOT MATCH ANY KEY IN LOCALSTORAGE]- ";
                 txBox2.append(LSelement);
             } else {
                 txBox2.append(LSelement);
@@ -135,6 +151,29 @@ var myUI = {
             
     		
     	}
+    },
+    loader2: (lsRmvIn, txBox2, lsRmvBtn) => {
+        return () => {
+            var LSelement = loadLS(lsRmvIn.value);
+            if (!LSelement || LSelement === null) {
+
+                LSelement = "-[KEY DOES NOT MATCH ANY KEY IN LOCALSTORAGE]- ";
+                txBox2.append(LSelement);
+            } else {
+                removeLSitem(lsRmvIn.value);
+
+                LSelement = "-[KEY REMOVED]- ";
+                
+                txBox2.append(LSelement);
+                setTimeout(() => {
+
+                    location.reload();
+
+                }, 1000);
+            }
+            
+            
+        }
     },
     makeHolder2: () => {
     	var holder2 = createEle("div"),
@@ -197,6 +236,7 @@ var myUI = {
     	demo.append(holder2);
 
         lsLoadIn.addEventListener('keyup', myUI.takeInput2(lsLoadIn, txBox2, loadBtn));
+        lsRmvIn.addEventListener('keyup', myUI.takeInput3(lsRmvIn, txBox2, lsRmvBtn));
     },
     makeHolder3: () => {
     	var holder3 = createEle("div"),
