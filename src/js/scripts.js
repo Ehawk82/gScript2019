@@ -38,7 +38,6 @@ var myUI = {
             lsWarn.innerHTML = "<span class='spnHiLite'>*WARNING*</span><span class='spnCode'>clearLS();</span>takes no params and will clear ALL storage.  Be sure you want to do this before hand. It may be a good idea to alert users if you plan on putting this function on an application";
             }
         }
-            
 
         clearAllBtn.innerHTML = "clearLS()";
         clearAllBtn.className = "clearAllBtn";
@@ -46,14 +45,17 @@ var myUI = {
 
         txBox.readOnly = true;
         txBox.className = "txBox";
+        
         txBox.value = lsObject;
         
         itemIn.type = "text";
         itemIn.placeholder = "items";
+        itemIn.id = "itemIn";
         itemIn.className = "ins";
 
         keyIn.type = "text";
         keyIn.placeholder = "key name";
+        keyIn.id = "keyIn";
         keyIn.className = "ins";
 
         initButton.innerHTML = " LSinit(key, item)";
@@ -66,7 +68,7 @@ var myUI = {
         lsLabel.innerHTML = "To use this demo with the localStorage functions, start by initializing the object. <br />&nbsp;<br /> The <span class='spnCode'>LSinit(key,item);</span> function will take two params, the keyname, and the string or JSON object. The text area shows what is in your localStorage.";
         lsLabel.className = "labels";
         
-        lsBonusLabel1.innerHTML = "<span class='spnHiLite'> RESERVED ITEM NAMES </span> <br /><h4>Place any of the following names as a string in the item input to generate a template JSON array</h4><br /><span class='spnCode'>basicUser</span><span class='spnCode'>midUser</span><span class='spnCode'>hiUser</span><br/>&nbsp;<br />(TRY ONE)";
+        lsBonusLabel1.innerHTML = "<span class='spnHiLite'> RESERVED ITEM NAMES </span> <br /><h4>Place any of the following names as a string in the item input to generate a template JSON array</h4><br /><span class='spnCode' onclick='myUI.spanCodeClicked(this)'>basicUser</span><span class='spnCode' onclick='myUI.spanCodeClicked(this)'>midUser</span><span class='spnCode' onclick='myUI.spanCodeClicked(this)'>hiUser</span><br/>&nbsp;<br />(TRY ONE)";
         lsBonusLabel1.className = "labels";
 
         lslabelToggle1.className = "labels";
@@ -94,13 +96,22 @@ var myUI = {
         keyIn.addEventListener('keyup', myUI.takeInput(keyIn, itemIn, initButton, txBox));
         itemIn.addEventListener('keyup', myUI.takeInput(keyIn, itemIn, initButton, txBox));
     },
+    spanCodeClicked: (x) => {
+            y = x.innerHTML, itemIn = bySel("#itemIn");
+            itemIn.value = y;
+        
+    },
     takeInput: (keyIn, itemIn, initButton, txBox) => {
+
     	return () => {
+
     		if (keyIn.value != "" && itemIn.value != "") {
+              
                 initButton.disabled = false;
                 initButton.onclick = () => { return LSinit(keyIn.value, itemIn.value), location.reload() };
                 
     		} else {
+               
     			initButton.disabled = true;
                 initButton.onclick = null;
     		}
