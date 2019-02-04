@@ -14,17 +14,21 @@ body {
     text-align: center;
 }
 button {
+	transition: 1s all;
 	box-shadow: 0 0 2px inset black, 0 0 2px black;
     cursor: pointer;
     height:31px;
     border:none;
     color:black;
+    font-size: .7em;
 }
 button:disabled{
+	transition: 1s all;
 	box-shadow: 0 0 30px inset black, 0 0 0px black;
 	cursor: not-allowed;
 	color:transparent;
 	background-color: #7D1F19;
+    font-size: .7em;	
 }
 
 h4 {

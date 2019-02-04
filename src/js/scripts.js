@@ -200,22 +200,23 @@ console.log()
                 LSelement = "-[KEY DOES NOT MATCH ANY KEY IN LOCALSTORAGE]- ";
                 txBox2.append(LSelement);
             } else {
-                parseLS(lsParseIn.value);
-                  
                 LSelement = parseLS(lsParseIn.value);
-
-                txBox2.append(LSelement);
-
+                for (var key in LSelement) {
+                    if (LSelement.hasOwnProperty(key)) {
+                        var val = LSelement[key];
+                        console.log(key);
+                        txBox2.append(" [" + key + "=" + val + "] ");
+                    }
+                }
             }
-            
-            
         }
     },
     makeHolder2: () => {
     	var holder2 = createEle("div"),
     	    lsLabel3 = createEle("div"), ls3Text = "",
     	    loadBtn = createEle("button"), lsRmvBtn = createEle("button"), lsParseIn = createEle("input"), lsParseBtn = createEle("button"),
-    	    lsLoadIn = createEle("input"), lsRmvIn = createEle("input"), txBox2 = createEle("textarea");
+    	    lsLoadIn = createEle("input"), lsRmvIn = createEle("input"), txBox2 = createEle("textarea"),
+            lsLoadName = createEle("input");
 
         lsLoadIn.type = "text";
         lsLoadIn.placeholder = "load key";
@@ -271,12 +272,14 @@ console.log()
     	holder2.className = "holder2";
     	holder2.append(lsLabel3);
         holder2.append(txBox2);
+
         holder2.append(lsLoadIn);
         holder2.append(loadBtn);
-        holder2.append(lsRmvIn)
+
+        holder2.append(lsRmvIn);
         holder2.append(lsRmvBtn);
 
-        holder2.append(lsParseIn)
+        holder2.append(lsParseIn);
         holder2.append(lsParseBtn);
 
     	demo.append(holder2);
