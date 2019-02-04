@@ -14,7 +14,7 @@ body {
     text-align: center;
 }
 button {
-	box-shadow: 0 0 2px inset white, 0 0 2px black;
+	box-shadow: 0 0 2px inset black, 0 0 2px black;
     cursor: pointer;
     height:31px;
     border:none;
@@ -37,7 +37,7 @@ h4 {
   background: #FFBBFF;
   color: #7D1F19;
 }
-.loadBtn,.lsRmvBtn {
+.loadBtn,.lsRmvBtn,.lsParseBtn {
     height: 32px;
     width:85px;
 	float: left;
@@ -78,7 +78,7 @@ h4 {
     margin-right: 5px;
     margin-left: 5px;
     margin-bottom: 0;
-background-color: silver;
+    background-color: silver;
 	padding: 0;
     width:370px !important;
     max-width: 360px;
@@ -118,15 +118,15 @@ background-color: silver;
 	height: 120px;
 	margin:3px 0;
 	outline:none;
-padding:0 10px;
+    padding:0 10px;
 	resize: none;
 	border:none;
 	clear:both;
 	float: left;
 	box-shadow: 0 0 2px inset white, 0 0 2px black;
-  font-size: .9em;
- font-weight: 400;
- font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: .9em;
+    font-weight: 400;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 .ins {
