@@ -38,7 +38,7 @@ var myUI = {
             }
         }
 
-        clearAllBtn.innerHTML = "clearLS()";
+        clearAllBtn.innerHTML = " CLEAR ";
         clearAllBtn.className = "clearAllBtn";
         clearAllBtn.onclick = () => { clearLS(); location.reload(); };
 
@@ -57,7 +57,7 @@ var myUI = {
         keyIn.id = "keyIn";
         keyIn.className = "ins";
 
-        initButton.innerHTML = " LSinit(key, item)";
+        initButton.innerHTML = " INIT ";
         initButton.disabled = true;
         initButton.className = "initButton"
         
@@ -99,21 +99,17 @@ var myUI = {
         itemIn.addEventListener('keyup', myUI.takeInput(keyIn, itemIn, initButton, txBox));
     },
     spanCodeClicked: (x) => {
-            y = x.innerHTML, itemIn = bySel("#itemIn");
-console.log()
+            var y = x.innerHTML, itemIn = bySel("#itemIn"), keyIn = bySel("#keyIn");
             itemIn.value = y;
+            keyIn.focus();
+            //myUI.takeInput()
     },
     takeInput: (keyIn, itemIn, initButton, txBox) => {
-
     	return () => {
-
     		if (keyIn.value != "" && itemIn.value != "") {
-              
                 initButton.disabled = false;
                 initButton.onclick = () => { return LSinit(keyIn.value, itemIn.value), location.reload() };
-                
     		} else {
-               
     			initButton.disabled = true;
                 initButton.onclick = null;
     		}
@@ -159,21 +155,17 @@ console.log()
     	return () => {
     		var LSelement = loadLS(lsLoadIn.value);
             if (!LSelement || LSelement === null) {
-
                 LSelement = " -[KEY DOES NOT MATCH ANY KEY IN LOCALSTORAGE]- ";
                 txBox2.append(LSelement);
             } else {
                 txBox2.append(LSelement);
             }
-            
-    		
     	}
     },
     loader2: (lsRmvIn, txBox2, lsRmvBtn) => {
         return () => {
             var LSelement = loadLS(lsRmvIn.value);
             if (!LSelement || LSelement === null) {
-
                 LSelement = "-[KEY DOES NOT MATCH ANY KEY IN LOCALSTORAGE]- ";
                 txBox2.append(LSelement);
             } else {
@@ -183,13 +175,9 @@ console.log()
                 
                 txBox2.append(LSelement);
                 setTimeout(() => {
-
                     location.reload();
-
                 }, 1200);
             }
-            
-            
         }
     },
     loader3: (lsParseIn, txBox2, lsParseBtn) => {
@@ -219,15 +207,15 @@ console.log()
             lsLoadName = createEle("input");
 
         lsLoadIn.type = "text";
-        lsLoadIn.placeholder = "load key";
+        lsLoadIn.placeholder = "LOAD KEY";
         lsLoadIn.className = "ins2";
         
         lsParseIn.type = "text";
-        lsParseIn.placeholder = "parse item";
+        lsParseIn.placeholder = "PARSE KEY";
         lsParseIn.className = "ins2";
 
         lsRmvIn.type = "text";
-        lsRmvIn.placeholder = "remove key";
+        lsRmvIn.placeholder = "REMOVE KEY";
         lsRmvIn.className = "ins2";
 
         if (localStorage.length === 0) {
@@ -246,21 +234,20 @@ console.log()
              lsLoadIn.readOnly = false;
              lsParseIn.readOnly = false;
              lsRmvIn.readOnly = false;
-
         }
 
         txBox2.className = "txBox2";
         txBox2.readOnly = true;
 
-        lsParseBtn.innerHTML = "parseLS(key)";
+        lsParseBtn.innerHTML = " PARSE ";
         lsParseBtn.className = "lsParseBtn";
         lsParseBtn.disabled = true;
 
-        lsRmvBtn.innerHTML = "removeLSitem(key)";
+        lsRmvBtn.innerHTML = " REMOVE ";
         lsRmvBtn.className = "lsRmvBtn";
         lsRmvBtn.disabled = true;
 
-        loadBtn.innerHTML = "loadLS(key)";
+        loadBtn.innerHTML = " LOAD ";
         loadBtn.className = "loadBtn";
         loadBtn.disabled = true;
         
@@ -292,10 +279,9 @@ console.log()
     	var holder3 = createEle("div"),
     	    lsLabel4 = createEle("div");
 
-        lsLabel4.innerHTML = "LABEL";
+        lsLabel4.innerHTML = "gScript";
         lsLabel4.className = "labels";
         lsLabel4.id = "lsLabel4";
-
 
     	holder3.className = "holder3";
     	holder3.append(lsLabel4);
