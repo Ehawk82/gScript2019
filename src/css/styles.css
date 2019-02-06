@@ -8,18 +8,20 @@ html, body {
     margin:0;
 }
 body {
-	background-color: darkgrey;
+	background-color: #777A87;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 600;
-    font-size:.88329em;
+    font-size:.8em;
     text-align: center;
+    color:black;
+    text-shadow: 0 0 .5px rgba(45,45,195,0.3),0 0 1px rgba(45,45,195,0.3);
 }
 textarea {
 	cursor: default;
 }
 button {
 	transition: 200ms all;
-	box-shadow: 0 0 1px inset black, 0 0 1px black;
+	box-shadow: 0 0 1px inset white, 0 0 2px inset white, 0 0 3px inset white, 0 0 1px black, 0 0 2px black;
     cursor: pointer;
 
     border:none;
@@ -36,7 +38,7 @@ button:disabled{
 }
 
 h4 {
-	box-shadow: 0 0 1px inset black, 0 0 1px white;
+	box-shadow: 0 0 2px inset black, 0 0 2px white;
 	padding:10px 8px;
 	margin:0;
 	text-indent: 0;
@@ -50,9 +52,9 @@ h4 {
     height: 32px;
     width:85px;
 	float: left;
-	margin-left: 0;
+	margin: 0;
 	outline:none;
-	margin-top: 1px;
+
 }
 
 .clearAllBtn {
@@ -80,25 +82,26 @@ h4 {
 	color:#226B0E;
 	padding: 2px 8px;
 	margin: 0 2px;
+	font-size: 7pt;
 
 }
 .holder {
     position: relative;
-	box-shadow: 0 0 1px inset white, 0 0 1px black;
+
 	height:700px;
     margin-right: 0;
     margin-left: 0;
     margin-bottom: 0;
-    background-color: silver;
+    background-color: #777A87;
 	padding: 0;
     width:370px !important;
     max-width: 360px;
 }
 .holder2 {
 	position: relative;
-	box-shadow: 0 0 1px inset white, 0 0 1px black;
+
 	height:700px;
-    background-color: silver;
+    background-color: #777A87;
     margin-right: 6px;
     margin-left: 6px;
     margin-bottom: 0;
@@ -111,10 +114,10 @@ h4 {
 	position: relative;
     background-color: rgba(255,255,255,0.1);
 	height:700px;
-    box-shadow: 0 0 1px inset white, 0 0 1px black;
+
     margin-right: 0;
     margin-bottom: 0;
-    background-color: silver;
+    background-color: #777A87;
 	padding:  0;
 	float: left;
     min-width:100px;
@@ -149,7 +152,7 @@ h4 {
 .ins2 {
 	width:163.5px;
 	height:30px;
-	margin:1px 0;
+	margin: 0;
 	text-indent: 10px;
 	outline:none;
     border:none;
@@ -159,10 +162,10 @@ h4 {
 	width:334px;
 	text-indent: 8px;
     text-align: left;
-	padding: 10px 13px;
+	padding: 12px 13px;
 	clear:both;
 	float: left;
-	margin:2px 0;
+	margin:4px 0;
 
 }
 .labels2 {
@@ -170,9 +173,12 @@ h4 {
 	width:223px;
 	text-indent: 8px;
     text-align: left;
-	padding: 10px 13px;
-margin:2px 0;
+	padding: 12px 13px;
+margin:8px 0;
 clear:left;
+
+
+
 
 }
 .txBox2 {
@@ -180,7 +186,7 @@ clear:left;
 	float:right;
 	margin-top:0;
 	margin-right:0;
-	height:333px;
+	height:500px;
 	width:384px;
 	border:none;
 	resize: none;
@@ -190,15 +196,15 @@ clear:left;
     font-weight: 400;
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
-.labels, .labels2, .ins, .txBox, .spnCode, .txBox2 {
-	box-shadow: 0 0 1px inset white, 0 0 1px black;
+.labels, .labels2, .ins, .txBox, .spnCode, .txBox2, #lsLabel4 {
+	box-shadow: 0 0 1px inset white, 0 0 2px inset white, 0 0 3px inset white, 0 0 1px black, 0 0 2px black;
 }
 .holder, .labels, .spnHiLite {
     cursor:default;
 
 }
-.holder, .labels, .ins, .txBox {
-	transition: 700ms all;
+.holder, .labels, .ins, .txBox, .holder, .holder2, .holder3 {
+	transition: 200ms all;
 
 }
 #demo {
@@ -206,17 +212,19 @@ clear:left;
     flex-direction: row;
     margin:0 auto;
     width:fit-content;
-    background-color: darkgrey;
+    background-color: #777A87;
 }
 #lsLabel3 {
 	width:628px;
-	margin-bottom: 4px;
+	
+	margin-bottom: 8px;
 	float: left;
 }
 #lsLabel4 {
-	width: 100%;
+	text-align: center;
 	background-color: lightgrey;
 	box-shadow: 0 0 6px inset white;
-	padding: 10px 0 ;
-	text-align: center;
+	padding: 12px 0 ;
+    min-width:100px;
+    max-width:100px;
 }

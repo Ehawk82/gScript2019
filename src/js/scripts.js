@@ -215,40 +215,35 @@ console.log("h:" + h + "px, w:" + w + "px");
     },
     makeHolder2: () => {
     	var holder2 = createEle("div"),
-    	    lsLabel3 = createEle("div"), ls3Text,
+    	    lsLabel3 = createEle("div"), ls3Text, ls3Opacity,
     	    loadBtn = createEle("button"), lsRmvBtn = createEle("button"), lsParseIn = createEle("input"), lsParseBtn = createEle("button"),
     	    lsLoadIn = createEle("input"), lsRmvIn = createEle("input"), txBox2 = createEle("textarea"),
             lsLoadName = createEle("div"), lsParseName = createEle("div"), lsRmvName = createEle("div");
         
-        lsLoadName.innerHTML = "Load items by entering key";
+        lsLoadName.innerHTML = "Loading objects is easy too.  By using the<span class='spnCode'>loadLS(key)</span>function, we can access a non-parse object or JSON in localStorage";
         lsLoadName.className = "labels2";
 
         lsLoadIn.type = "text";
         lsLoadIn.placeholder = "LOAD KEY";
         lsLoadIn.className = "ins2";
         
-        lsParseName.innerHTML = "Parse objects by entering key";
+        lsParseName.innerHTML = "Parse objects by the entering key name.  The<span class='spnCode'>parseLS(key)</span>function will take the name of the object and parse it.";
         lsParseName.className = "labels2";
 
         lsParseIn.type = "text";
         lsParseIn.placeholder = "PARSE KEY";
         lsParseIn.className = "ins2";
 
-        lsRmvName.innerHTML = "Remove objects by entering key";
+        lsRmvName.innerHTML = "Most of the time we don't need to clear all storage. So using the<span class='spnCode'>removeLSitem(key)</span>function is a great way to single out objects.";
         lsRmvName.className = "labels2";
 
         lsRmvIn.type = "text";
         lsRmvIn.placeholder = "REMOVE KEY";
         lsRmvIn.className = "ins2";
 
-
-        lsLoadName.innerHTML = "Load the items by entering the key";
-        lsParseName.innerHTML = "Parse the items by entering the key";
-        lsRmvName.innerHTML = "Remove the items by entering the key";
-
         if (localStorage.length === 0) {
             ls3Text = "transparent";
-
+            ls3Opacity = "0";
   
             lsLoadIn.readOnly = true;
             lsRmvIn.readOnly = true;
@@ -259,8 +254,8 @@ console.log("h:" + h + "px, w:" + w + "px");
             lsParseIn.style.cursor = "default";
 
         } else {
-
             ls3Text = "black";
+            ls3Opacity = "1";
 
             lsLoadIn.readOnly = false;
             lsParseIn.readOnly = false;
@@ -273,9 +268,7 @@ console.log("h:" + h + "px, w:" + w + "px");
 
         }
 
-        lsLoadName.style.color = ls3Text;
-        lsParseName.style.color = ls3Text;
-        lsRmvName.style.color = ls3Text;
+        holder2.style.opacity = ls3Opacity;
 
         txBox2.className = "txBox2";
         txBox2.readOnly = true;
@@ -334,11 +327,18 @@ console.log("h:" + h + "px, w:" + w + "px");
     makeHolder3: () => {
     	var holder3 = createEle("div"),
     	    lsLabel4 = createEle("div");
-
+if (localStorage.length === 0) {
+            ls3Text = "transparent";
+            ls3Opacity = "0";
+        } else {
+            ls3Text = "black";
+            ls3Opacity = "1";
+        }
         lsLabel4.innerHTML = "gScript";
         lsLabel4.className = "labels";
         lsLabel4.id = "lsLabel4";
 
+        holder3.style.opacity = ls3Opacity;
     	holder3.className = "holder3";
     	holder3.append(lsLabel4);
 
