@@ -1,12 +1,11 @@
 var myUI = {
     init: () => {
-        var h = myHeight(screen, "px");
-
-        console.log(h + "px");
-
-        myUI.loadout();
+        var h = myHeight(screen, "px"),
+            w = myWidth(screen, "px");
+      
+        myUI.loadout(h, w);
     },
-    loadout: () => {
+    loadout: (h, w) => {
         var holder = createEle("div"),
             lsLabel = createEle("div"),
             lsBonusLabel1 = createEle("div"),
@@ -19,7 +18,7 @@ var myUI = {
             lsObject = "", lslabelToggle1 = createEle("div"),
             br1 = createEle("br"),
             clearAllBtn = createEle("button"), lsWarn =createEle("div");
-
+console.log("h:" + h + "px, w:" + w + "px");
         if (localStorage.length === 0) {
         	lsObject = " - there is no data in your localStorage - ";
             lslabelToggle1.style.color = "transparent";
@@ -89,7 +88,7 @@ var myUI = {
         holder.append(lslabelToggle1);
         holder.append(lsLabel2);
         holder.append(clearAllBtn);
-
+        
         demo.append(holder);
 
         myUI.makeHolder2();
@@ -162,6 +161,11 @@ console.log()
 
                 LSelement = " -[KEY DOES NOT MATCH ANY KEY IN LOCALSTORAGE]- ";
                 txBox2.append(LSelement);
+                setTimeout(() => {
+
+                    location.reload();
+
+                }, 1200);
             } else {
                 txBox2.append(LSelement);
             }
@@ -176,12 +180,17 @@ console.log()
 
                 LSelement = "-[KEY DOES NOT MATCH ANY KEY IN LOCALSTORAGE]- ";
                 txBox2.append(LSelement);
+                setTimeout(() => {
+
+                    location.reload();
+
+                }, 1200);
             } else {
                 removeLSitem(lsRmvIn.value);
 
-                LSelement = "-[KEY REMOVED]- ";
+                LSelement = "-[KEY REMOVED]-";
                 
-                txBox2.append(LSelement);
+                txBox2.value = LSelement;
                 setTimeout(() => {
 
                     location.reload();
@@ -199,6 +208,11 @@ console.log()
 
                 LSelement = "-[KEY DOES NOT MATCH ANY KEY IN LOCALSTORAGE]- ";
                 txBox2.append(LSelement);
+                setTimeout(() => {
+
+                    location.reload();
+
+                }, 1200);
             } else {
                 LSelement = parseLS(lsParseIn.value);
                 for (var key in LSelement) {
@@ -213,54 +227,73 @@ console.log()
     },
     makeHolder2: () => {
     	var holder2 = createEle("div"),
-    	    lsLabel3 = createEle("div"), ls3Text = "",
+    	    lsLabel3 = createEle("div"), ls3Text,
     	    loadBtn = createEle("button"), lsRmvBtn = createEle("button"), lsParseIn = createEle("input"), lsParseBtn = createEle("button"),
     	    lsLoadIn = createEle("input"), lsRmvIn = createEle("input"), txBox2 = createEle("textarea"),
-            lsLoadName = createEle("input");
+            lsLoadName = createEle("div"), lsParseName = createEle("div"), lsRmvName = createEle("div");
+        
+        lsLoadName.innerHTML = "Load items by entering key";
+        lsLoadName.className = "labels2";
 
         lsLoadIn.type = "text";
         lsLoadIn.placeholder = "load key";
         lsLoadIn.className = "ins2";
         
+        lsParseName.innerHTML = "Parse objects by entering key";
+        lsParseName.className = "labels2";
+
         lsParseIn.type = "text";
         lsParseIn.placeholder = "parse item";
         lsParseIn.className = "ins2";
+
+        lsRmvName.innerHTML = "Remove objects by entering key";
+        lsRmvName.className = "labels2";
 
         lsRmvIn.type = "text";
         lsRmvIn.placeholder = "remove key";
         lsRmvIn.className = "ins2";
 
-        if (localStorage.length === 0) {
-             ls3Text = "transparent";
-  
-             lsLoadIn.readOnly = true;
-             lsRmvIn.readOnly = true;
-             lsParseIn.readOnly = true;
 
-             lsLoadIn.style.cursor = "default";
-             lsRmvIn.style.cursor = "default";
-             lsParseIn.style.cursor = "default";
+        lsLoadName.innerHTML = "Load the items by entering the key";
+        lsParseName.innerHTML = "Parse the items by entering the key";
+        lsRmvName.innerHTML = "Remove the items by entering the key";
+
+        if (localStorage.length === 0) {
+            ls3Text = "transparent";
+
+  
+            lsLoadIn.readOnly = true;
+            lsRmvIn.readOnly = true;
+            lsParseIn.readOnly = true;
+
+            lsLoadIn.style.cursor = "default";
+            lsRmvIn.style.cursor = "default";
+            lsParseIn.style.cursor = "default";
 
         } else {
-             ls3Text = "black";
-             lsLoadIn.readOnly = false;
-             lsParseIn.readOnly = false;
-             lsRmvIn.readOnly = false;
+            ls3Text = "black";
 
+            lsLoadIn.readOnly = false;
+            lsParseIn.readOnly = false;
+            lsRmvIn.readOnly = false;
         }
+
+        lsLoadName.style.color = ls3Text;
+        lsParseName.style.color = ls3Text;
+        lsRmvName.style.color = ls3Text;
 
         txBox2.className = "txBox2";
         txBox2.readOnly = true;
 
-        lsParseBtn.innerHTML = "parseLS(key)";
+        lsParseBtn.innerHTML = "Parse";
         lsParseBtn.className = "lsParseBtn";
         lsParseBtn.disabled = true;
 
-        lsRmvBtn.innerHTML = "removeLSitem(key)";
+        lsRmvBtn.innerHTML = "Remove";
         lsRmvBtn.className = "lsRmvBtn";
         lsRmvBtn.disabled = true;
 
-        loadBtn.innerHTML = "loadLS(key)";
+        loadBtn.innerHTML = "Load";
         loadBtn.className = "loadBtn";
         loadBtn.disabled = true;
         
@@ -272,13 +305,16 @@ console.log()
     	holder2.className = "holder2";
     	holder2.append(lsLabel3);
         holder2.append(txBox2);
-
+        
+        holder2.append(lsLoadName);
         holder2.append(lsLoadIn);
         holder2.append(loadBtn);
 
+        holder2.append(lsRmvName);
         holder2.append(lsRmvIn);
         holder2.append(lsRmvBtn);
 
+        holder2.append(lsParseName);
         holder2.append(lsParseIn);
         holder2.append(lsParseBtn);
 
@@ -307,7 +343,6 @@ console.log()
 window.onload = () => { myUI.init(); };
 
 /*
-
 function bySel(x) { return document.querySelector(x) };
 function byId(x) { return document.getElementById(x) };
 function byClass(x) { return document.getElementsByClassName(x) };
@@ -319,7 +354,6 @@ function createEle(x) { return document.createElement(x) };
 function byTag(x, y) { if (!y || y === null) {y = 0}  return document.getElementsByTagName(x)[y] };
 function makeLock(x) { return x.className = x.className + "_locked" };
 function takeLock(x) { var y, z; return y = x.className.split("_locked"), z = y[0], x.className = z };
-
 
 var ts = Math.round(new Date().getTime()/1000);
 
@@ -335,9 +369,7 @@ var basicUser = {
     gBool: false,
     tStamp: ts,
     level: 1
-
 };
-
 var midUser = {
     health: 100,
     manna: 15,
@@ -350,7 +382,6 @@ var midUser = {
     gBool: false,
     tStamp: ts,
     level: 2
-
 };
 
 function saveLS(x, y) { return localStorage.setItem(x, JSON.stringify(y)) };

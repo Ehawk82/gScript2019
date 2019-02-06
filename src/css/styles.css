@@ -4,43 +4,48 @@ html, body {
         -ms-user-select: none;
             user-select: none; 
             transition: 700ms all;
-
+    padding: 0;
+    margin:0;
 }
 body {
 	background-color: darkgrey;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 600;
-    font-size:.9em;
+    font-size:.88329em;
     text-align: center;
 }
+textarea {
+	cursor: default;
+}
 button {
-	transition: 1s all;
-	box-shadow: 0 0 2px inset black, 0 0 2px black;
+	transition: 200ms all;
+	box-shadow: 0 0 1px inset black, 0 0 1px black;
     cursor: pointer;
-    height:31px;
+
     border:none;
     color:black;
-    font-size: .7em;
+
 }
 button:disabled{
-	transition: 1s all;
-	box-shadow: 0 0 30px inset black, 0 0 0px black;
+	transition: 200ms all;
+	box-shadow: 0 0 15px inset rgba(0,0,0,0.8), 0 0 0px black;
 	cursor: not-allowed;
 	color:transparent;
-	background-color: #7D1F19;
-    font-size: .7em;	
+	background-color: #6E3606;
+	
 }
 
 h4 {
-	box-shadow: 0 0 4px inset black, 0 0 4px white;
-	padding:8px;
+	box-shadow: 0 0 1px inset black, 0 0 1px white;
+	padding:10px 8px;
 	margin:0;
 	text-indent: 0;
 }
 ::selection {
-  background: #FFBBFF;
-  color: #7D1F19;
+    background: #FFBBFF;
+    color: #FF3E86;
 }
+
 .loadBtn,.lsRmvBtn,.lsParseBtn {
     height: 32px;
     width:85px;
@@ -51,12 +56,12 @@ h4 {
 }
 
 .clearAllBtn {
-    height: 32px;
+    line-height: 29px;
 	width:360px;
 	clear:both;
 	float: left;
 	outline:none;
-	margin-top: 4px;
+	margin-top: 5px;
 }
 .initButton {
     margin-top:5px;
@@ -67,36 +72,36 @@ h4 {
     width:110px;
 }
 .spnHiLite {
-	color: darkred;
-	padding: 2px 8px; 
+	color: #6E3606;
+	padding: 4px 8px; 
 }
 .spnCode {
 	background-color: white;
+	color:#226B0E;
 	padding: 2px 8px;
 	margin: 0 2px;
+
 }
 .holder {
     position: relative;
-	box-shadow: 0 0 4px inset white, 0 0 4px black;
-	height:680px;
-    margin-right: 5px;
-    margin-left: 5px;
+	box-shadow: 0 0 1px inset white, 0 0 1px black;
+	height:700px;
+    margin-right: 0;
+    margin-left: 0;
     margin-bottom: 0;
     background-color: silver;
 	padding: 0;
     width:370px !important;
     max-width: 360px;
-
 }
 .holder2 {
 	position: relative;
-	box-shadow: 0 0 4px inset white, 0 0 4px black;
-	height:680px;
-	
+	box-shadow: 0 0 1px inset white, 0 0 1px black;
+	height:700px;
     background-color: silver;
-    margin-right: 5px;
+    margin-right: 6px;
+    margin-left: 6px;
     margin-bottom: 0;
-
 	padding:  0;
 	float: left;
     max-width: 654px;
@@ -104,18 +109,16 @@ h4 {
 }
 .holder3 {
 	position: relative;
-    background-color: rgba(255,255,255,0.3);
-	height:680px;
-
-    box-shadow: 0 0 4px inset white, 0 0 4px black;
-    margin-right: 5px;
+    background-color: rgba(255,255,255,0.1);
+	height:700px;
+    box-shadow: 0 0 1px inset white, 0 0 1px black;
+    margin-right: 0;
     margin-bottom: 0;
-background-color: silver;
+    background-color: silver;
 	padding:  0;
 	float: left;
     min-width:100px;
     max-width:100px;
-    
 }
 .txBox {
 	width:340px;
@@ -127,7 +130,7 @@ background-color: silver;
 	border:none;
 	clear:both;
 	float: left;
-	box-shadow: 0 0 2px inset white, 0 0 2px black;
+	box-shadow: 0 0 1px inset white, 0 0 1px black;
     font-size: .9em;
     font-weight: 400;
     font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -141,7 +144,7 @@ background-color: silver;
 	text-indent: 10px;
 	outline:none;
     float:left;
-	box-shadow: 0 0 2px inset white, 0 0 2px black;
+	box-shadow: 0 0 1px inset white, 0 0 1px black;
 }
 .ins2 {
 	width:163.5px;
@@ -150,7 +153,6 @@ background-color: silver;
 	text-indent: 10px;
 	outline:none;
     border:none;
-
 }
 .labels {
 	background-color: silver;
@@ -160,29 +162,39 @@ background-color: silver;
 	padding: 10px 13px;
 	clear:both;
 	float: left;
+	margin:2px 0;
 
-	box-shadow: 0 0 2px inset white, 0 0 6px pink;
+}
+.labels2 {
+	background-color: silver;
+	width:223px;
+	text-indent: 8px;
+    text-align: left;
+	padding: 10px 13px;
+margin:2px 0;
+clear:left;
+
 }
 .txBox2 {
 	clear:left;
 	float:right;
-	margin-top:1px;
+	margin-top:0;
 	margin-right:0;
-	height:643px;
+	height:333px;
 	width:384px;
 	border:none;
 	resize: none;
 	outline:none;
 	font-size: .9em;
 	padding:0 10px;
- font-weight: 400;
- font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
-.labels, .ins, .txBox, .spnCode, .txBox2 {
-	box-shadow: 0 0 2px inset white, 0 0 6px slategrey;
+.labels, .labels2, .ins, .txBox, .spnCode, .txBox2 {
+	box-shadow: 0 0 1px inset white, 0 0 1px black;
 }
-.holder, .labels, .spnCode, .spnHiLite {
-cursor:default;
+.holder, .labels, .spnHiLite {
+    cursor:default;
 
 }
 .holder, .labels, .ins, .txBox {
@@ -194,10 +206,12 @@ cursor:default;
     flex-direction: row;
     margin:0 auto;
     width:fit-content;
-background-color: darkgrey;
+    background-color: darkgrey;
 }
 #lsLabel3 {
 	width:628px;
+	margin-bottom: 4px;
+	float: left;
 }
 #lsLabel4 {
 	width: 100%;
