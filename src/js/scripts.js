@@ -37,7 +37,7 @@ console.log("h:" + h + "px, w:" + w + "px");
             }
         }
 
-        clearAllBtn.innerHTML = "clearLS()";
+        clearAllBtn.innerHTML = " CLEAR ";
         clearAllBtn.className = "clearAllBtn";
         clearAllBtn.onclick = () => { clearLS(); location.reload(); };
 
@@ -56,7 +56,7 @@ console.log("h:" + h + "px, w:" + w + "px");
         keyIn.id = "keyIn";
         keyIn.className = "ins";
 
-        initButton.innerHTML = " LSinit(key, item)";
+        initButton.innerHTML = " INIT ";
         initButton.disabled = true;
         initButton.className = "initButton"
         
@@ -98,21 +98,17 @@ console.log("h:" + h + "px, w:" + w + "px");
         itemIn.addEventListener('keyup', myUI.takeInput(keyIn, itemIn, initButton, txBox));
     },
     spanCodeClicked: (x) => {
-            y = x.innerHTML, itemIn = bySel("#itemIn");
-console.log()
+            var y = x.innerHTML, itemIn = bySel("#itemIn"), keyIn = bySel("#keyIn");
             itemIn.value = y;
+            keyIn.focus();
+            //myUI.takeInput()
     },
     takeInput: (keyIn, itemIn, initButton, txBox) => {
-
     	return () => {
-
     		if (keyIn.value != "" && itemIn.value != "") {
-              
                 initButton.disabled = false;
                 initButton.onclick = () => { return LSinit(keyIn.value, itemIn.value), location.reload() };
-                
     		} else {
-               
     			initButton.disabled = true;
                 initButton.onclick = null;
     		}
@@ -158,7 +154,6 @@ console.log()
     	return () => {
     		var LSelement = loadLS(lsLoadIn.value);
             if (!LSelement || LSelement === null) {
-
                 LSelement = " -[KEY DOES NOT MATCH ANY KEY IN LOCALSTORAGE]- ";
                 txBox2.append(LSelement);
                 setTimeout(() => {
@@ -169,15 +164,12 @@ console.log()
             } else {
                 txBox2.append(LSelement);
             }
-            
-    		
     	}
     },
     loader2: (lsRmvIn, txBox2, lsRmvBtn) => {
         return () => {
             var LSelement = loadLS(lsRmvIn.value);
             if (!LSelement || LSelement === null) {
-
                 LSelement = "-[KEY DOES NOT MATCH ANY KEY IN LOCALSTORAGE]- ";
                 txBox2.append(LSelement);
                 setTimeout(() => {
@@ -192,13 +184,9 @@ console.log()
                 
                 txBox2.value = LSelement;
                 setTimeout(() => {
-
                     location.reload();
-
                 }, 1200);
             }
-            
-            
         }
     },
     loader3: (lsParseIn, txBox2, lsParseBtn) => {
@@ -236,21 +224,21 @@ console.log()
         lsLoadName.className = "labels2";
 
         lsLoadIn.type = "text";
-        lsLoadIn.placeholder = "load key";
+        lsLoadIn.placeholder = "LOAD KEY";
         lsLoadIn.className = "ins2";
         
         lsParseName.innerHTML = "Parse objects by entering key";
         lsParseName.className = "labels2";
 
         lsParseIn.type = "text";
-        lsParseIn.placeholder = "parse item";
+        lsParseIn.placeholder = "PARSE KEY";
         lsParseIn.className = "ins2";
 
         lsRmvName.innerHTML = "Remove objects by entering key";
         lsRmvName.className = "labels2";
 
         lsRmvIn.type = "text";
-        lsRmvIn.placeholder = "remove key";
+        lsRmvIn.placeholder = "REMOVE KEY";
         lsRmvIn.className = "ins2";
 
 
@@ -271,11 +259,18 @@ console.log()
             lsParseIn.style.cursor = "default";
 
         } else {
+<<<<<<< HEAD
             ls3Text = "black";
 
             lsLoadIn.readOnly = false;
             lsParseIn.readOnly = false;
             lsRmvIn.readOnly = false;
+=======
+             ls3Text = "black";
+             lsLoadIn.readOnly = false;
+             lsParseIn.readOnly = false;
+             lsRmvIn.readOnly = false;
+>>>>>>> 3fb0a50d89fb5f2b4d7d98c89d76d0c91b78e101
         }
 
         lsLoadName.style.color = ls3Text;
@@ -285,6 +280,7 @@ console.log()
         txBox2.className = "txBox2";
         txBox2.readOnly = true;
 
+<<<<<<< HEAD
         lsParseBtn.innerHTML = "Parse";
         lsParseBtn.className = "lsParseBtn";
         lsParseBtn.disabled = true;
@@ -294,6 +290,17 @@ console.log()
         lsRmvBtn.disabled = true;
 
         loadBtn.innerHTML = "Load";
+=======
+        lsParseBtn.innerHTML = " PARSE ";
+        lsParseBtn.className = "lsParseBtn";
+        lsParseBtn.disabled = true;
+
+        lsRmvBtn.innerHTML = " REMOVE ";
+        lsRmvBtn.className = "lsRmvBtn";
+        lsRmvBtn.disabled = true;
+
+        loadBtn.innerHTML = " LOAD ";
+>>>>>>> 3fb0a50d89fb5f2b4d7d98c89d76d0c91b78e101
         loadBtn.className = "loadBtn";
         loadBtn.disabled = true;
         
@@ -328,10 +335,9 @@ console.log()
     	var holder3 = createEle("div"),
     	    lsLabel4 = createEle("div");
 
-        lsLabel4.innerHTML = "LABEL";
+        lsLabel4.innerHTML = "gScript";
         lsLabel4.className = "labels";
         lsLabel4.id = "lsLabel4";
-
 
     	holder3.className = "holder3";
     	holder3.append(lsLabel4);
