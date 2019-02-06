@@ -259,18 +259,18 @@ console.log("h:" + h + "px, w:" + w + "px");
             lsParseIn.style.cursor = "default";
 
         } else {
-<<<<<<< HEAD
+
             ls3Text = "black";
 
             lsLoadIn.readOnly = false;
             lsParseIn.readOnly = false;
             lsRmvIn.readOnly = false;
-=======
+
              ls3Text = "black";
              lsLoadIn.readOnly = false;
              lsParseIn.readOnly = false;
              lsRmvIn.readOnly = false;
->>>>>>> 3fb0a50d89fb5f2b4d7d98c89d76d0c91b78e101
+
         }
 
         lsLoadName.style.color = ls3Text;
@@ -280,7 +280,7 @@ console.log("h:" + h + "px, w:" + w + "px");
         txBox2.className = "txBox2";
         txBox2.readOnly = true;
 
-<<<<<<< HEAD
+
         lsParseBtn.innerHTML = "Parse";
         lsParseBtn.className = "lsParseBtn";
         lsParseBtn.disabled = true;
@@ -290,7 +290,7 @@ console.log("h:" + h + "px, w:" + w + "px");
         lsRmvBtn.disabled = true;
 
         loadBtn.innerHTML = "Load";
-=======
+
         lsParseBtn.innerHTML = " PARSE ";
         lsParseBtn.className = "lsParseBtn";
         lsParseBtn.disabled = true;
@@ -300,7 +300,7 @@ console.log("h:" + h + "px, w:" + w + "px");
         lsRmvBtn.disabled = true;
 
         loadBtn.innerHTML = " LOAD ";
->>>>>>> 3fb0a50d89fb5f2b4d7d98c89d76d0c91b78e101
+
         loadBtn.className = "loadBtn";
         loadBtn.disabled = true;
         
