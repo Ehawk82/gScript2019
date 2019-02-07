@@ -227,7 +227,7 @@ console.log("h:" + h + "px, w:" + w + "px");
         lsLoadIn.placeholder = "LOAD KEY";
         lsLoadIn.className = "ins2";
         
-        lsParseName.innerHTML = "Parse objects by the entering key name.  The<span class='spnCode'>parseLS(key)</span>function will take the name of the object and parse it.";
+        lsParseName.innerHTML = "Parse objects by entering the key name.  The<span class='spnCode'>parseLS(key)</span>function will take the name of the object and parse it.";
         lsParseName.className = "labels2";
 
         lsParseIn.type = "text";
